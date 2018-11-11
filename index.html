@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="localiser les vélos à louer sur une carte de Lyon, 
+        visualisez les disponibilités et réservez le votre.">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/locabike.css">
+        <link rel="stylesheet" type="text/css" href="css/slider.css">
+        <link rel="stylesheet" type="text/css" href="css/map.css">
+        <title>LOCaBIKE</title>
+    </head>
+
+    <body>
+        <header id="header" class="navtop">
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="#locabike">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="#slider">Photos</a>
+                    </li>
+                    <li>
+                        <a href="#map">Carte</a>
+                    </li>
+                    <li>
+                        <a href="#footer">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section id="locabike" class="locabike">
+            <h1>LOC<span>a</span>BIKE</h1>
+            <h2></h2>
+        </section>
+
+        <section id="slider" class="slider">
+            <button id="btnSlider" class="btn btnSlider">btnSlider</button>
+            <div id="slideshow" class="slideshow">
+                <div>
+                    <img name="slide" id="slide" class="slide" src="img/bike-rental-1.jpg">
+                </div>
+            </div>
+            <div class="button">
+                <button id="prevBtn" class="prevBtn"> </button>
+                <button id="pauseBtn" class="pauseBtn"> </button>
+                <button id="nextBtn" class="nextBtn"> </button>
+            </div>
+
+        </section>
+
+        <section id="map-container" class="map-container">
+            <div id="map" class="map">
+                <button id="btnMap" class="btn btnMap">btnMap</button>
+            </div>
+
+            <div id="stations" class="stations">
+                <button id="btnStations" class="btn btnStations">btnStations</button>
+                <div id="infostations" class="infostations">
+                    <h3>Détails de la station</h3>
+                    <form>
+                        <button id="btnForm" class="btn btnForm">btnForm</button>
+                    </form>
+                </div>
+
+                <div id="signature" class="signature">
+                    <button id="btnSign" class="btn btnSign">btnSign</button>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer" class="footer">
+
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/stations.js"></script>
+        <script src="js/form.js"></script>
+        <script src="js/sign.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

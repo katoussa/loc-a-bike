@@ -1,0 +1,34 @@
+.map-container{
+    width: 100%;
+    background-color: antiquewhite;
+    margin-top: 5em;
+    display: flex;
+    flex-direction: row;
+}
+
+.map{
+    width: 70%;
+    height: 400px;
+}
+
+.stations{
+    width: 30%;
+    background-color: #ff0000;
+    height: 100%;
+}
+
+.map,
+.infostations,
+.signature{
+    margin: 0;
+    padding: 0;
+}
+
+.infostations{
+    height: 250px;
+}
+
+.signature{
+    height: 150px;
+    background-color: rgb(114, 189, 219);
+}

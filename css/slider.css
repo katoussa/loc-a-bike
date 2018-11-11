@@ -1,0 +1,144 @@
+.slideshow {
+    margin: 20px auto;
+    position: relative;
+    width: 1000px;
+    height: 525px;
+    padding: 10px;
+    pointer-events: none;
+  }
+  
+  .slideshow > div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .slideshow > div > img{
+    border: solid 5px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    height: 100%;
+  }
+  
+  .slideshow > div > img,
+  .slideshow > div > figcaption {
+    width: 100%;
+  }
+
+  .button{
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .prevBtn,
+  .pauseBtn,
+  .playBtn,
+  .nextBtn{
+    cursor: pointer;
+    z-index: 10;
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .button button{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+  }
+
+  .button button:hover{
+    transform: scale(1.1);
+  }
+
+  .prevBtn{
+    background: url(../img/prev.png) no-repeat center;
+    background-size: cover;
+  }
+
+  .pauseBtn{
+    background: url(../img/pause.png) no-repeat center;
+    background-size: cover;
+  }
+
+  .playBtn{
+    background: url(../img/play.png) no-repeat center;
+    background-size: cover;
+  }
+
+  .nextBtn{
+    background: url(../img/next.png) no-repeat center;
+    background-size: cover;
+  }
+
+
+  @media screen and (max-width: 992px){
+
+    .slideshow{
+      width: 700px;
+    }
+
+    .button{
+      display: none;
+    }
+
+  }
+
+
+  @media screen and (max-width: 780px){
+
+    .slideshow{
+      width: 500px;
+    }
+
+    .button{
+      display: none;
+    }
+
+  }
+
+   
+  @media screen and (max-width: 1280px){
+
+    .slideshow{
+    width: 950px;
+    height: 620px;
+    }
+}
+
+@media screen and (max-width: 992px){
+
+    .slideshow{
+    width: 700px;
+    height: 500px;
+    }
+
+    .button{
+    display: none;
+    }
+
+}
+
+@media screen and (max-width: 780px){
+
+    .slideshow{
+    width: 550px;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    .slideshow{
+    width: 420px;
+    }
+
+}
+
+@media screen and (max-width: 450px){
+
+    .slideshow{
+    width: 300px;
+    }
+
+}

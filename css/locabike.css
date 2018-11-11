@@ -1,0 +1,119 @@
+/*general*/
+
+html,
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: url(../img/bitume1.jpg) center no-repeat;
+    background-size: cover;
+}
+
+a, a-webkit-any-link{
+    text-decoration: none;
+}
+
+.btn{
+    width: 150px;
+    height: 25px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+
+/*navbar*/
+
+.navtop{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.nav{
+    width: 45%;
+    display: inline-block;
+    float: right;
+}
+
+.nav ul{
+    width: 100%;
+}
+
+.nav li{
+    display: inline-block;
+    text-align: center;
+    font-size: 1.75em;
+    font-weight: 800;
+    margin: 0 1.25em;
+}
+
+.nav li:hover,
+.nav li:focus{
+    transform: scale(1.1);
+}
+
+.nav li a,
+.nav li a-webkit-any-link{
+    color: #fff;
+}
+
+.nav li:hover a,
+.nav li:hover a-webkit-any-link,
+.nav li:focus a,
+.nav li:focus a-webkit-any-link{
+    color: #ff4040;
+}
+
+
+/*locabike section*/
+
+.locabike{
+    margin-top: 5em;
+}
+
+.locabike h1{
+    color: #ff4040;
+    font-size: 7.5em;
+    line-height: 0.8;
+    margin : 0.5em auto 0 auto;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(255, 170, 60);
+}
+
+.locabike h1 span{
+    color: rgb(255, 235, 55);
+    display: inline-block;
+    transform: rotate(0.1turn);
+    font-size: 1.25em;
+    margin-right: -0.2em;
+}
+
+
+@media screen and (max-width: 1280px){
+
+    .nav li{
+        font-size: 1.5em;
+        margin: 0 0.75em;
+    }
+}
+
+@media screen and (max-width: 992px){
+    
+}
+
+@media screen and (max-width: 780px){
+    
+}
+
+@media screen and (max-width: 600px){
+    
+}
+
+@media screen and (max-width: 450px){
+    
+}
