@@ -26,59 +26,150 @@ a, a-webkit-any-link{
 
 /*navbar*/
 
-.navtop{
+.menu{
     position: fixed;
-    z-index: 999;
     top: 0;
+    left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.navtop{
+	width:100%;
+    background-color: rgba(255, 0, 0, 0.5);
+	height:50px; 
+	line-height:50px;
+    border-bottom:1px solid #dddddd;
+    z-index: 998;
+}
+
+.navBtn{
+    width: 150px;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.navBtn h3,
+.navBtn button{
+    display: inline-block;
+}
+
+.navBtn h3{
+    font-size: 2em;
+    transform: translateY(-25%);
+}
+
+.burger{
+    width: 50px;
+    height: 50px;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png) center no-repeat;
+    background-size: cover;
+    background-color: rgb(255, 60, 60);
+    cursor:pointer;
+    z-index:999;
+}
+
+.cross{
+    width: 50px;
+    height: 50px;
+    background: url(https://cdn.pixabay.com/photo/2012/04/24/11/27/old-39432_960_720.png);
+    background-size: cover;
+    background-color: rgb(255, 60, 60);
+    position:absolute;
+    top:0px;
+    right:0;
+    cursor:pointer;
+    z-index:999;
 }
 
 .nav{
-    width: 45%;
-    display: inline-block;
-    float: right;
+    z-index:900; 
+    font-weight:bold; 
+    font-size:0.8em; 
+    width:100%; 
+    background:#f1f1f1;  
+    text-align:center; 
+    font-size:25px;
+    position:absolute;
+    top: -200px;
 }
 
-.nav ul{
-    width: 100%;
+@keyframes slideDown{
+    0% {top: -200px;}
+    100% {top: 0px;}
 }
 
-.nav li{
-    display: inline-block;
-    text-align: center;
-    font-size: 1.75em;
-    font-weight: 800;
-    margin: 0 1.25em;
+.nav2{z-index:900; 
+    font-weight:bold; 
+    font-size:0.8em; 
+    width:100%; 
+    background:#f1f1f1;  
+    text-align:center; 
+    font-size:25px;
+    position:absolute;
+    top: 0px;
 }
 
-.nav li:hover,
-.nav li:focus{
-    transform: scale(1.1);
+.nav ul {
+    margin: 0; 
+    padding: 0; 
+    list-style-type: none; 
+    list-style-image: none;
 }
 
-.nav li a,
-.nav li a-webkit-any-link{
-    color: #fff;
+.nav li {
+    display: block;   
+    list-style: none;
+    padding:10px 0 10px 0; 
+    border-bottom:#dddddd 1px solid;
 }
 
-.nav li:hover a,
-.nav li:hover a-webkit-any-link,
-.nav li:focus a,
-.nav li:focus a-webkit-any-link{
-    color: #ff4040;
+.nav li:hover{
+    display: block;    
+    background:#ffffff; 
 }
 
+.nav ul li a { 
+    text-decoration:none;
+    margin: 0px; 
+    color:#666;
+}
+
+.nav ul li a:hover {  
+    color: #666; 
+    text-decoration:none;
+}
+
+.nav a{
+    text-decoration:none; 
+    color:#666;
+}
+
+.nav a:hover{
+    text-decoration:none; 
+    color:#666;
+}
+
+.glyphicon-home{
+  color:white; 
+  font-size:1.5em; 
+  margin-top:5px; 
+  margin:0 auto;
+}
+
+a{
+    color:#336699;
+}
 
 /*locabike section*/
 
 .locabike{
-    margin-top: 5em;
+    margin-top: 3em;
 }
 
 .locabike h1{
     color: #ff4040;
-    font-size: 7.5em;
+    font-size: 7em;
     line-height: 0.8;
     margin : 0.5em auto 0 auto;
     text-align: center;
@@ -86,6 +177,7 @@ a, a-webkit-any-link{
 }
 
 .locabike h1 span{
+    z-index: 5;
     color: rgb(255, 235, 55);
     display: inline-block;
     transform: rotate(0.1turn);
