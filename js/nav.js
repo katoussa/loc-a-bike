@@ -12,7 +12,7 @@ var menu = {
     
     onClick: function(){
         $(menu.idBurger).on("click", function(){
-            if(menu.close = true){
+            if(menu.close === true){
                 document.querySelector(menu.idBurger).className = "cross";
                 document.querySelector(menu.navId).className = "nav2";
                 menu.close = false;
