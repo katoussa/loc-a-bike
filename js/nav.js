@@ -11,15 +11,17 @@ var menu = {
     },
     
     onClick: function(){
-        $(menu.burger).on("click", function(){
+        $(menu.idBurger).on("click", function(){
             if(menu.close = true){
                 document.querySelector(menu.idBurger).className = "cross";
                 document.querySelector(menu.navId).className = "nav2";
+                menu.close = false;
                 console.log(menu.close);
             }
             else{
             document.querySelector(menu.idBurger).className = "burger";
             document.querySelector(menu.navId).className = "nav2";
+            menu.close = true;
             console.log(menu.close);
             };
         });
