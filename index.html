@@ -12,21 +12,19 @@
     </head>
 
     <body>
-        <header id="header" class="navtop">
-            <div class="nav">
+        <header id="header" class="menu">
+            <div clas="navtop">
+                <div class="navBtn">
+                    <h3>Menu</h3>
+                    <button id="burger" class="burger"></button>
+                </div>
+            </div>
+            <div id="nav" class="nav">
                 <ul>
-                    <li>
-                        <a href="#locabike">Accueil</a>
-                    </li>
-                    <li>
-                        <a href="#slider">Photos</a>
-                    </li>
-                    <li>
-                        <a href="#map">Carte</a>
-                    </li>
-                    <li>
-                        <a href="#footer">Contact</a>
-                    </li>
+                    <a href="#locabike"><li>Accueil</li></a>
+                    <a href="#slider"><li>Photos</li></a>
+                    <a href="#map"><li>Carte</li></a>
+                    <a href="#footer"><li>Contact</li></a>
                 </ul>
             </div>
         </header>
@@ -37,7 +35,7 @@
         </section>
 
         <section id="slider" class="slider">
-            <button id="btnSlider" class="btn btnSlider">btnSlider</button>
+            <button id="btnSlider" class="btn btnSlider">btnSlider</button> 
             <div id="slideshow" class="slideshow">
                 <div>
                     <img name="slide" id="slide" class="slide" src="img/bike-rental-1.jpg">
@@ -76,6 +74,8 @@
         </footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js" ></script>
+        <script src="js/nav.js"></script>
         <script src="js/slider.js"></script>
         <script src="js/map.js"></script>
         <script src="js/stations.js"></script>

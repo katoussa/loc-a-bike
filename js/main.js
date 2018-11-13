@@ -1,11 +1,19 @@
 var globalMain = {
     data: {
+        menu: {
+            id: ".navtop",
+            navId: "#nav",
+            idBurger: "#burger",
+            burger: ".burger",
+            cross: ".cross"
+        },
+
         slider: {
             id: "#slider",
             slide: ".slide",
             prevBtn : "#prevBtn",
             nextBtn: "#nextBtn",
-            pauseBtn: "pauseBtn",
+            pauseBtn: "#pauseBtn",
             imgs: ["img/bike-rental-1.jpg",
             "img/bike-rental-2.jpeg",
             "img/bike-rental-3.jpg",
@@ -14,7 +22,7 @@ var globalMain = {
             "img/bike-rental-6.jpg",
             "img/bike-rental-7.jpg"],
             time: 5000,
-            button: "#btnSlider"
+            btn: "#btnSlider"
         },
 
         map: {
@@ -36,7 +44,11 @@ var globalMain = {
 
     methods: {
         init: function(){
-            /*slider.init(globalMain.data.slider.button);*/
+            menu.init(globalMain.data.menu.id,
+                        globalMain.data.menu.navId,
+                        globalMain.data.menu.idBurger,
+                        globalMain.data.menu.burger,
+                        globalMain.data.menu.cross);
             slider.init(globalMain.data.slider.id, 
                 globalMain.data.slider.slide,
                 globalMain.data.slider.prevBtn,
@@ -44,14 +56,11 @@ var globalMain = {
                 globalMain.data.slider.pauseBtn,
                 globalMain.data.slider.imgs,
                 globalMain.data.slider.time,
-                globalMain.data.slider.button);
-/*map.methods.init();
-            */map.init(globalMain.data.map.button);
+                globalMain.data.slider.btn);
+            map.init(globalMain.data.map.button);
             stations.init(globalMain.data.stations.button);
             form.init(globalMain.data.form.button);
             signature.init(globalMain.data.signature.button);
-            /*stations.methods.init();
-            signature.methods.init();*/
         }
     }
 };
