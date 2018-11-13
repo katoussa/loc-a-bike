@@ -23,14 +23,22 @@ a, a-webkit-any-link{
     font-weight: 800;
 }
 
+ul,
+li{
+    list-style: none;
+}
+
 
 /*navbar*/
 
 .menu{
     position: fixed;
+    height: 50px;
+    z-index: 999;
     top: 0;
     left: 0;
     width: 100%;
+    background:#f1f1f1;  
 }
 
 .navtop{
@@ -44,9 +52,11 @@ a, a-webkit-any-link{
 
 .navBtn{
     width: 150px;
+    z-index: 999;
     position:absolute;
     top:0;
     right:0;
+    padding: 0;
 }
 
 .navBtn h3,
@@ -75,9 +85,6 @@ a, a-webkit-any-link{
     background: url(https://cdn.pixabay.com/photo/2012/04/24/11/27/old-39432_960_720.png);
     background-size: cover;
     background-color: rgb(255, 60, 60);
-    position:absolute;
-    top:0px;
-    right:0;
     cursor:pointer;
     z-index:999;
 }
@@ -87,17 +94,16 @@ a, a-webkit-any-link{
     font-weight:bold; 
     font-size:0.8em; 
     width:100%; 
-    background:#f1f1f1;  
     text-align:center; 
     font-size:25px;
     position:absolute;
     top: -200px;
 }
 
-@keyframes slideDown{
+/* @keyframes slideDown{
     0% {top: -200px;}
-    100% {top: 0px;}
-}
+    100% {top: 50px;}
+} */
 
 .nav2{z-index:900; 
     font-weight:bold; 
@@ -107,19 +113,17 @@ a, a-webkit-any-link{
     text-align:center; 
     font-size:25px;
     position:absolute;
-    top: 0px;
+    top: 50px;
 }
 
 .nav ul {
     margin: 0; 
     padding: 0; 
-    list-style-type: none; 
     list-style-image: none;
 }
 
 .nav li {
     display: block;   
-    list-style: none;
     padding:10px 0 10px 0; 
     border-bottom:#dddddd 1px solid;
 }

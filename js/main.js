@@ -22,7 +22,7 @@ var globalMain = {
             "img/bike-rental-6.jpg",
             "img/bike-rental-7.jpg"],
             time: 5000,
-            button: "#btnSlider"
+            btn: "#btnSlider"
         },
 
         map: {
@@ -56,7 +56,7 @@ var globalMain = {
                 globalMain.data.slider.pauseBtn,
                 globalMain.data.slider.imgs,
                 globalMain.data.slider.time,
-                globalMain.data.slider.button);
+                globalMain.data.slider.btn);
             map.init(globalMain.data.map.button);
             stations.init(globalMain.data.stations.button);
             form.init(globalMain.data.form.button);

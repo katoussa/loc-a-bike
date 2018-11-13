@@ -1,5 +1,5 @@
 var slider = {
-  init: function(id, slide, prevBtn, nextBtn, pauseBtn, imgs, time, button){
+  init: function(id, slide, prevBtn, nextBtn, pauseBtn, imgs, time, btn){
     slider.id = id;
     slider.slide = slide;
     slider.prevBtn = prevBtn;
@@ -7,19 +7,19 @@ var slider = {
     slider.pauseBtn = pauseBtn;
     slider.imgs = imgs;
     slider.time = time;
-    slider.button = button;
+    slider.btn = btn;
     slider.indexImg = -1;
     slider.nbreImg = imgs.length;
   
-    slider.onClick();
     slider.onKeyboard();
     slider.onSwipe();
-    /*slider.clickBtn();*/
+    slider.clickBtn();
     slider.autoSlide();
+    slider.onClick();
   },
 
   clickBtn: function(){
-        $(slider.button).on("click", function(){
+        $(slider.btn).on("click", function(){
             console.log("btnSlider est clické!");
         });
   },
@@ -44,18 +44,16 @@ var slider = {
       clearInterval(slider.auto);
       slider.auto = null;
       document.querySelector(slider.pauseBtn).className = "playBtn";
-      console.log("pause");
-      console.log(slider.auto);
     }else{
       slider.auto = setInterval(slider.nextImg, slider.time);
       document.querySelector(slider.pauseBtn).className = "pauseBtn";
-      console.log("play");
     };
   },
 
   prevImg: function(){
+    slider.indexImg--;
     if (slider.indexImg > 0) {
-      slider.indexImg = slider.indexImg - 1;
+      slider.indexImg = slider.indexImg -1;
     }
     if (slider.indexImg < 0) {
       slider.indexImg = slider.nbreImg -1;
@@ -70,7 +68,7 @@ var slider = {
     $(slider.prevBtn).on("click", function(){
       slider.prevImg();
     });
-    $(slider.pauseBtn).on("click", function(){
+    $(pauseBtn).on("click", function(){
       slider.playPause();
     });
   },
@@ -92,13 +90,13 @@ var slider = {
   },
 
   onSwipe: function(){
-    $(slider.id).on("swiperight", function(){
+    $(slider.slide).on("swiperight", function(){
       slider.prevImg();
     });
-    $(slider.id).on("swipeleft", function(){
+    $(slider.slide).on("swipeleft", function(){
       slider.nextImg();
     });
-    $(slider.id).on("tap", function(){
+    $(slider.slide).on("tap", function(){
       slider.playPause();
     });
   }
