@@ -26,7 +26,9 @@ var globalMain = {
         },
 
         map: {
-            button: "#btnMap"
+            button: "#btnMap",
+            lat: 45.750000,
+            lng: 4.850000
         },
 
         stations: {
@@ -44,12 +46,14 @@ var globalMain = {
 
     methods: {
         init: function(){
-            menu.init(globalMain.data.menu.id,
+            var objMenu = Object.create(menu);
+            objMenu.init(globalMain.data.menu.id,
                         globalMain.data.menu.navId,
                         globalMain.data.menu.idBurger,
                         globalMain.data.menu.burger,
                         globalMain.data.menu.cross);
-            slider.init(globalMain.data.slider.id, 
+            var objSlider = Object.create(slider);
+            objSlider.init(globalMain.data.slider.id, 
                 globalMain.data.slider.slide,
                 globalMain.data.slider.prevBtn,
                 globalMain.data.slider.nextBtn,
@@ -57,7 +61,10 @@ var globalMain = {
                 globalMain.data.slider.imgs,
                 globalMain.data.slider.time,
                 globalMain.data.slider.btn);
-            map.init(globalMain.data.map.button);
+            var objMap = Object.create(map);
+            objMap.clickBtn(globalMain.data.map.button);
+            objMap.init(globalMain.data.map.lat,
+                        globalMain.data.map.lng);
             stations.init(globalMain.data.stations.button);
             form.init(globalMain.data.form.button);
             signature.init(globalMain.data.signature.button);
