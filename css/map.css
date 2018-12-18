@@ -1,14 +1,24 @@
 .map-container{
-    width: 100%;
-    background-color: antiquewhite;
-    margin-top: 5em;
+    width: 95%;
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-content{
     display: flex;
     flex-direction: row;
 }
 
+.btnMap{
+    margin: 10px;
+}
+
 .map{
     width: 70%;
-    height: 400px;
+    height: 600px;
+    border-radius: 10px;
+    background-color: antiquewhite;
 }
 
 .stations{
@@ -25,10 +35,44 @@
 }
 
 .infostations{
-    height: 250px;
+    height: 350px;
+}
+
+.btnInfos{
+    border-radius: 5px;
+}
+
+.formInvisible{
+    display: none;
+} 
+
+.formVisible{
+    display: block;
+}
+
+.noBikes{
+    display: none;
+}
+
+.nobikesVisible{
+    display: block;
+}
+
+.bolt{
+    font-weight: 800;
+}
+
+.form label,
+.form input{
+    margin: 0.25em 0.75em;
 }
 
 .signature{
-    height: 150px;
+    height: 200px;
     background-color: rgb(114, 189, 219);
+    display: none;
+}
+
+.signatureVisible{
+    display: block;
 }

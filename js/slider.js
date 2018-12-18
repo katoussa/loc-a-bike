@@ -11,19 +11,14 @@ var slider = {
     slider.indexImg = -1;
     slider.nbreImg = imgs.length;
   
+    //Appel des méthodes
     slider.onKeyboard();
     slider.onSwipe();
-    slider.clickBtn();
     slider.autoSlide();
     slider.onClick();
   },
 
-  clickBtn: function(){
-        $(slider.btn).on("click", function(){
-            console.log("btnSlider est clické!");
-        });
-  },
-
+  // Méthode de défilement vers image suivante
   nextImg: function(){
     slider.indexImg++;
     if(slider.indexImg > slider.nbreImg - 1) {
@@ -35,10 +30,12 @@ var slider = {
     document.querySelector(slider.slide).src = slider.imgs[slider.indexImg];  
   },
 
+  // Méthode de défilement auto
   autoSlide: function(){
     slider.auto = setInterval(slider.nextImg, slider.time);
   },
 
+  //Méthode play / pause
   playPause: function() {
     if(slider.auto) {
       clearInterval(slider.auto);
@@ -50,6 +47,7 @@ var slider = {
     };
   },
 
+  //Méthode de défilement vers image précédente
   prevImg: function(){
     slider.indexImg--;
     if (slider.indexImg > 0) {
@@ -61,6 +59,7 @@ var slider = {
     document.querySelector(slider.slide).src = slider.imgs[slider.indexImg];
   },
 
+  //Méthode de click sur boutons
   onClick: function(){
     $(slider.nextBtn).on("click", function(){
       slider.nextImg();
@@ -73,6 +72,7 @@ var slider = {
     });
   },
 
+  //Méthode évènement touches clavier
   onKeyboard: function (){
     $('body').on("keydown", function(e){
       switch(e.keyCode){
@@ -89,6 +89,7 @@ var slider = {
     });
   },
 
+  //Méthode défilement + play / pause évènements tactiles
   onSwipe: function(){
     $(slider.slide).on("swiperight", function(){
       slider.prevImg();

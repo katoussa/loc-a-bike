@@ -7,7 +7,6 @@ var globalMain = {
             burger: ".burger",
             cross: ".cross"
         },
-
         slider: {
             id: "#slider",
             slide: ".slide",
@@ -21,53 +20,100 @@ var globalMain = {
             "img/bike-rental-5.jpg",
             "img/bike-rental-6.jpg",
             "img/bike-rental-7.jpg"],
-            time: 5000,
-            btn: "#btnSlider"
+            time: 5000
         },
-
-        map: {
-            button: "#btnMap",
-            lat: 45.750000,
+        services: {
+            url: "https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=aafd8fb136e33eb56306745265f47b4f6770d3cb"
+        },
+        map: { //Données de la map
+            lat: 45.765000,
             lng: 4.850000
         },
-
         stations: {
-            button: "#btnStations"
+            stations: [],
+            marker: [],
+            icon: ".leaflet-marker-icon",
+            imgSrc1: "https://cdn.pixabay.com/photo/2018/05/01/15/06/marker-3365838_960_720.png",
+            imgSrc2: "https://pngimage.net/wp-content/uploads/2018/06/simbolo-de-ubicacion-png-6.png"
         },
-
+        infos:{
+            station: stations.station,
+            stationName: document.getElementById("stationName"),
+            stationAdress: document.getElementById("stationAdress"),
+            dispoBike: document.getElementById("dispoBike"),
+            dispoPlace: document.getElementById("dispoPlace"),
+            formInvisible: "formInvisible",
+            noBikes: "noBikes"
+        },
         form: {
-            button: "#btnForm"
+            name: document.getElementById("name"),
+            firstname: document.getElementById("firstname"),
+            button: document.getElementById("btnForm")
         },
-
         signature: {
             button: "#btnSign"
         }
     },
-
     methods: {
         init: function(){
-            var objMenu = Object.create(menu);
+            // Création des objets 
+            var objMenu = Object.create(menu),
+                objSlider = Object.create(slider),
+                objMap = Object.create(map),
+                objServices = Object.create(services),
+                objStations = Object.create(stations),
+                objInfos = Object.create(infos),
+                objForm = Object.create(form);
+            
             objMenu.init(globalMain.data.menu.id,
-                        globalMain.data.menu.navId,
-                        globalMain.data.menu.idBurger,
-                        globalMain.data.menu.burger,
-                        globalMain.data.menu.cross);
-            var objSlider = Object.create(slider);
+                    globalMain.data.menu.navId,
+                    globalMain.data.menu.idBurger,
+                    globalMain.data.menu.burger,
+                    globalMain.data.menu.cross
+            );
+                    
             objSlider.init(globalMain.data.slider.id, 
                 globalMain.data.slider.slide,
                 globalMain.data.slider.prevBtn,
                 globalMain.data.slider.nextBtn,
                 globalMain.data.slider.pauseBtn,
                 globalMain.data.slider.imgs,
-                globalMain.data.slider.time,
-                globalMain.data.slider.btn);
-            var objMap = Object.create(map);
-            objMap.clickBtn(globalMain.data.map.button);
-            objMap.init(globalMain.data.map.lat,
-                        globalMain.data.map.lng);
-            stations.init(globalMain.data.stations.button);
-            form.init(globalMain.data.form.button);
-            signature.init(globalMain.data.signature.button);
+                globalMain.data.slider.time
+            );
+
+            objMap.init(
+                globalMain.data.map.lat,
+                globalMain.data.map.lng
+            );
+
+            objServices.getData(globalMain.data.services.url)
+                .then(function(data) {
+                    globalMain.data.stations.stations = data;
+                    objStations.init(
+                        globalMain.data.stations.stations,
+                        globalMain.data.stations.marker,
+                        globalMain.data.stations.icon,
+                        globalMain.data.stations.imgSrc1,
+                        globalMain.data.stations.imgSrc2
+                    );
+                    
+                    objInfos.init(
+                        globalMain.data.stations.stations,
+                        globalMain.data.infos.stationName,
+                        globalMain.data.infos.stationAdress,
+                        globalMain.data.infos.dispoBike,
+                        globalMain.data.infos.dispoPlace,
+                        globalMain.data.infos.formInvisible,
+                        globalMain.data.infos.noBikes
+                    );
+                    
+                });
+
+            objForm.init(
+                globalMain.data.form.name,
+                globalMain.data.form.firstname,
+                globalMain.data.form.button
+            );
         }
     }
 };

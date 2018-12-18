@@ -8,23 +8,24 @@
         <link rel="stylesheet" type="text/css" href="css/locabike.css">
         <link rel="stylesheet" type="text/css" href="css/slider.css">
         <link rel="stylesheet" type="text/css" href="css/map.css">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
         <title>LOCaBIKE</title>
     </head>
 
     <body>
         <header id="header" class="menu">
-            <div clas="navtop">
-                <div class="navBtn">
-                    <h3>Menu</h3>
-                    <button id="burger" class="burger"></button>
-                </div>
-            </div>
             <div id="nav" class="nav">
                 <ul>
-                    <a href="#locabike"><li>Accueil</li></a>
-                    <a href="#slider"><li>Photos</li></a>
-                    <a href="#map"><li>Carte</li></a>
-                    <a href="#footer"><li>Contact</li></a>
+                    <li><a href="#locabike">Accueil</a></li>
+                    <li><a href="#slider">Photos</a></li>
+                    <li><a href="#map">Carte</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                    <li clas="navtop">
+                        <div class="navBtn">
+                            <h3>Menu</h3>
+                            <button id="burger" class="burger"></button>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </header>
@@ -35,7 +36,6 @@
         </section>
 
         <section id="slider" class="slider">
-            <button id="btnSlider" class="btn btnSlider">btnSlider</button> 
             <div id="slideshow" class="slideshow">
                 <div>
                     <img name="slide" id="slide" class="slide" src="img/bike-rental-1.jpg">
@@ -50,21 +50,42 @@
         </section>
 
         <section id="map-container" class="map-container">
-            <div id="map" class="map">
-                <button id="btnMap" class="btn btnMap">btnMap</button>
+            <div class="legende">
+                <h3>Carte des vélos en temps réel</h3>
+                <p>Icône bleu = vélos disponibles dans la station</p>
+                <p>Icône rouge = pas de vélo disponible dans la station</p>
             </div>
+            <div class="map-content">
+                <div id="map" class="map"></div>
 
-            <div id="stations" class="stations">
-                <button id="btnStations" class="btn btnStations">btnStations</button>
-                <div id="infostations" class="infostations">
-                    <h3>Détails de la station</h3>
-                    <form>
-                        <button id="btnForm" class="btn btnForm">btnForm</button>
-                    </form>
-                </div>
+                <div id="stations" class="stations">
+                    <div id="infostations" class="infostations">
+                        <div class="infoClick">
+                            <h3>Détails de la station</h3>
+                            <p id ="stationName" class="stationName"><span class='bolt'>Nom de la station: </span></p>
+                            <p id="stationAdress" class="stationAdress"><span class='bolt'>Adresse: </span></p>
+                            <p id="dispoBike" class="dispoBike"><span class='bolt'>Nombre de vélos disponibles: </span></p>
+                            <p id="dispoPlace" class="dispoPlace"><span class='bolt'>Nombre de places disponibles: </span></p>
+                        </div>
+                        <form id="formInvisible" class="formInvisible">
+                            <div id="elemFormInvisible1" class="elemFormInvisible">
+                                <label for="name">Nom :</label>
+                                <input type="text" required id="name" name="user_name" value="">
+                            </div>
+                            <div id="elemFormInvisible2" class="elemFormInvisible">
+                                <label for="firstname">Votre prénom :</label>
+                                <input type="text" required id="firstname" name="user_firstname" value="">
+                            </div>
+                            <div id="booking" class="booking">
+                                <button type="button" id="btnForm" class="btn btnForm">Réserver</button>
+                            </div>
+                        </form>
+                        <p id="noBikes" class="noBikes">Il n'y a aucun vélo disponible dans cette station.</p>
+                    </div>
 
-                <div id="signature" class="signature">
-                    <button id="btnSign" class="btn btnSign">btnSign</button>
+                    <div id="signature" class="signature">
+                        <button id="btnSign" class="btn btnSign">btnSign</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -75,10 +96,13 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js" ></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
         <script src="js/nav.js"></script>
         <script src="js/slider.js"></script>
         <script src="js/map.js"></script>
+        <script src="js/services.js"></script>
         <script src="js/stations.js"></script>
+        <script src="js/infos.js"></script>
         <script src="js/form.js"></script>
         <script src="js/sign.js"></script>
         <script src="js/main.js"></script>
