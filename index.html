@@ -16,10 +16,10 @@
         <header id="header" class="menu">
             <div id="nav" class="nav">
                 <ul>
-                    <li><a href="#locabike">Accueil</a></li>
-                    <li><a href="#slider">Photos</a></li>
-                    <li><a href="#map">Carte</a></li>
-                    <li><a href="#footer">Contact</a></li>
+                    <li><a href="#locabike" data-ajax="false">Accueil</a></li>
+                    <li><a href="#slider" data-ajax="false">Photos</a></li>
+                    <li><a href="#map" data-ajax="false">Carte</a></li>
+                    <li><a href="#footer" data-ajax="false">Contact</a></li>
                     <li clas="navtop">
                         <div class="navBtn">
                             <h3>Menu</h3>
@@ -56,7 +56,9 @@
                 <p>Icône rouge = pas de vélo disponible dans la station</p>
             </div>
             <div class="map-content">
-                <div id="map" class="map"></div>
+                <div id="map" class="map">
+                    <button id="btnMap" class="btn btnMap">btnMap</button>
+                </div>
 
                 <div id="stations" class="stations">
                     <div id="infostations" class="infostations">
@@ -67,24 +69,26 @@
                             <p id="dispoBike" class="dispoBike"><span class='bolt'>Nombre de vélos disponibles: </span></p>
                             <p id="dispoPlace" class="dispoPlace"><span class='bolt'>Nombre de places disponibles: </span></p>
                         </div>
-                        <form id="formInvisible" class="formInvisible">
+                        <form id="formInvisible" class="formInvisible" method="GET">
                             <div id="elemFormInvisible1" class="elemFormInvisible">
                                 <label for="name">Nom :</label>
-                                <input type="text" required id="name" name="user_name" value="">
+                                <input type="text" required id="name" name="name" minlength="2" maxlength="15" size="18">
+                                <p id="messError1" class="messError">Vous devez entrer votre nom.</p>
                             </div>
                             <div id="elemFormInvisible2" class="elemFormInvisible">
                                 <label for="firstname">Votre prénom :</label>
-                                <input type="text" required id="firstname" name="user_firstname" value="">
+                                <input type="text" required id="firstname" name="firstname">
+                                <p id="messError2" class="messError">Vous devez entrer votre prénom.</p>
                             </div>
                             <div id="booking" class="booking">
-                                <button type="button" id="btnForm" class="btn btnForm">Réserver</button>
+                                <button type="button" id="btnForm" class="btn btnForm" disabled="disabled">Réserver</button>
                             </div>
                         </form>
                         <p id="noBikes" class="noBikes">Il n'y a aucun vélo disponible dans cette station.</p>
                     </div>
 
                     <div id="signature" class="signature">
-                        <button id="btnSign" class="btn btnSign">btnSign</button>
+                        <canvas id="signCanvas" class="signCanvas"></canvas>
                     </div>
                 </div>
             </div>

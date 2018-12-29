@@ -67,12 +67,27 @@
     margin: 0.25em 0.75em;
 }
 
+.messError1,
+.messError2{
+    display: none;
+}
+
+.messError1v,
+.messError2v{
+    display: block;
+}
+
 .signature{
-    height: 200px;
-    background-color: rgb(114, 189, 219);
     display: none;
 }
 
 .signatureVisible{
     display: block;
+    height: 227.5px;
+    background-color: rgb(114, 189, 219);
+}
+
+.signCanvas{
+    width: 100%;
+    height: 100%;
 }

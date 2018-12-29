@@ -10,5 +10,18 @@ var services = {
             })
         });
         return thisData;
+    },
+
+    getLocalStorage: function(name, firstname, setName, setFirstname){
+        currentName = localStorage.getItem(setName);
+        currentFirstname = localStorage.getItem(setFirstname);
+        if(form.name in sessionStorage){
+            console.log("localStorage nom = " + currentName);
+            return currentName;
+        };
+        if(form.firstname in sessionStorage){
+            console.log("localStorage prénom = " + currentFirstname);
+            return currentFirstname;
+        };
     }
 };

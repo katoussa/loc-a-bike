@@ -1,3 +1,4 @@
+
 var globalMain = {
     data: {
         menu: {
@@ -26,6 +27,7 @@ var globalMain = {
             url: "https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=aafd8fb136e33eb56306745265f47b4f6770d3cb"
         },
         map: { //Données de la map
+            button: "#btnMap",
             lat: 45.765000,
             lng: 4.850000
         },
@@ -48,10 +50,14 @@ var globalMain = {
         form: {
             name: document.getElementById("name"),
             firstname: document.getElementById("firstname"),
-            button: document.getElementById("btnForm")
+            button: document.getElementById("btnForm"),
+            messError1: document.getElementById("messError1"),
+            messError2: document.getElementById("messError2"),
+            setName: "",
+            setFirstname: ""
         },
         signature: {
-            button: "#btnSign"
+            signature: document.getElementById("signature")
         }
     },
     methods: {
@@ -109,11 +115,21 @@ var globalMain = {
                     
                 });
 
-            objForm.init(
-                globalMain.data.form.name,
-                globalMain.data.form.firstname,
-                globalMain.data.form.button
-            );
+                objServices.getLocalStorage(
+                    globalMain.data.form.setName,
+                    globalMain.data.form.setFirstname
+                );
+    
+                objForm.init(
+                    globalMain.data.form.name,
+                    globalMain.data.form.firstname,
+                    globalMain.data.form.button,
+                    globalMain.data.form.messError1,
+                    globalMain.data.form.messError2,
+                    globalMain.data.form.setName,
+                    globalMain.data.form.setFirstname,
+                    globalMain.data.signature.signature
+                );
         }
     }
 };
