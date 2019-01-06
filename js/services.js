@@ -1,4 +1,5 @@
 var services = {
+
     getData: function(url) {
         var thisData = new Promise(function(resolve, reject) {
             $.get(url, function(dataPromise) {
@@ -12,16 +13,14 @@ var services = {
         return thisData;
     },
 
-    getLocalStorage: function(name, firstname, setName, setFirstname){
-        currentName = localStorage.getItem(setName);
-        currentFirstname = localStorage.getItem(setFirstname);
-        if(form.name in sessionStorage){
-            console.log("localStorage nom = " + currentName);
-            return currentName;
-        };
-        if(form.firstname in sessionStorage){
-            console.log("localStorage prénom = " + currentFirstname);
-            return currentFirstname;
-        };
+    getStorageName: function(){
+        currentName = localStorage.getItem("form.setName");
+        form.name.value = currentName;
+    },
+
+    
+    getStorageFirstname: function(){
+        currentFirstname = localStorage.getItem("form.setFirstname");
+        form.firstname.value = currentFirstname;
     }
 };

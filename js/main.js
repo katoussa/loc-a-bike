@@ -26,8 +26,7 @@ var globalMain = {
         services: {
             url: "https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=aafd8fb136e33eb56306745265f47b4f6770d3cb"
         },
-        map: { //Données de la map
-            button: "#btnMap",
+        map: {
             lat: 45.765000,
             lng: 4.850000
         },
@@ -39,7 +38,6 @@ var globalMain = {
             imgSrc2: "https://pngimage.net/wp-content/uploads/2018/06/simbolo-de-ubicacion-png-6.png"
         },
         infos:{
-            station: stations.station,
             stationName: document.getElementById("stationName"),
             stationAdress: document.getElementById("stationAdress"),
             dispoBike: document.getElementById("dispoBike"),
@@ -56,8 +54,12 @@ var globalMain = {
             setName: "",
             setFirstname: ""
         },
-        signature: {
-            signature: document.getElementById("signature")
+        sign: {
+            signature: document.getElementById("signature"),
+            canvas: document.getElementById("signCanvas"),
+            ctx: "",
+            img: "img/plume.png",
+            clear: document.getElementById("clearSign")
         }
     },
     methods: {
@@ -69,7 +71,8 @@ var globalMain = {
                 objServices = Object.create(services),
                 objStations = Object.create(stations),
                 objInfos = Object.create(infos),
-                objForm = Object.create(form);
+                objForm = Object.create(form),
+                objSign = Object.create(sign);
             
             objMenu.init(globalMain.data.menu.id,
                     globalMain.data.menu.navId,
@@ -115,21 +118,23 @@ var globalMain = {
                     
                 });
 
-                objServices.getLocalStorage(
-                    globalMain.data.form.setName,
-                    globalMain.data.form.setFirstname
-                );
-    
-                objForm.init(
-                    globalMain.data.form.name,
-                    globalMain.data.form.firstname,
-                    globalMain.data.form.button,
-                    globalMain.data.form.messError1,
-                    globalMain.data.form.messError2,
-                    globalMain.data.form.setName,
-                    globalMain.data.form.setFirstname,
-                    globalMain.data.signature.signature
-                );
+            objForm.init(
+                globalMain.data.form.name,
+                globalMain.data.form.firstname,
+                globalMain.data.form.button,
+                globalMain.data.form.messError1,
+                globalMain.data.form.messError2,
+                globalMain.data.form.setName,
+                globalMain.data.form.setFirstname,
+                globalMain.data.sign.signature
+            );
+            
+            objSign.init(
+                globalMain.data.sign.canvas,
+                globalMain.data.sign.ctx,
+                globalMain.data.sign.img,
+                globalMain.data.sign.clear
+            );
         }
     }
 };

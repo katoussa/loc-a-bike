@@ -8,64 +8,48 @@ var form = {
         form.setName = setName;
         form.setFirstame = setFirstame;
 
-        form.testInputs();
+        services.getStorageName();
+        services.getStorageFirstname();
+        form.checkForm();
         form.btnActive();
         form.validForm(signature);
     },
 
-    testInputs: function(){
-        console.log("regExp ok! " + form.name.value.length);
-        form.regName = false;
-        form.regFirstname= false;
+    checkForm: function(){
+        if(form.name.value.length < 3){
+            messError1.className = "messError1v";
+        }else{
+            messError1.className = "messError1";
+        };
+        if(form.firstname.value.length < 3){
+            messError2.className = "messError2v";
+        }else{
+            messError2.className = "messError2";
+        };
 
-        form.name.addEventListener("input", function() {
-            if( form.name.value.length < 3){
-                form.messError1.className = "messError1v";
-                form.regName = false;
-            }else{
-                form.regName = true;
-                form.messError1.className = "messError1";
-            };
-        });
-
-        form.firstname.addEventListener("input", function() {
-            if(form.firstname.value.length < 3){
-                form.regFirstname = false;
-                form.messError2.className = "messError2v";
-            }else{
-                form.regFirstname = true;
-                form.messError2.className = "messError2";
-            };
-        });
+        if(form.name.value.length < 3 || form.firstname.value.length < 3){
+            form.button.disabled = true;
+        }else if(form.name.value.length > 3 && form.firstname.value.length > 3){
+            form.button.disabled = false;
+        };
     },
 
     btnActive: function(){
-        document.getElementById("formInvisible").addEventListener("keyup", function(){
-            if(form.regName === false || form.regFirstname === false){
-                form.button.disabled = true;
-            }else if(form.regName === true && form.regFirstname === true){
-                form.button.disabled = false;
-            };
-        });
+        form.name.addEventListener("input", form.checkForm.bind(form));
+        form.firstname.addEventListener("input", form.checkForm.bind(form));
     },
 
     validForm: function(signature){
         form.button.addEventListener("click", function(){
-            console.log("click btn ok");
             if(form.regName === false || form.regFirstname === false){
-                console.log("form no valid");
                 signature.className = "signature";
             }else{
-                console.log("form valid");
                 if(typeof sessionStorage!='undefined') {
-                    alert("Message récupéré");
                     localStorage.setItem("form.setName", form.name.value);
-                    localStorage.setItem("form.setFirstame", form.firstname.value);
+                    localStorage.setItem("form.setFirstname", form.firstname.value);
                   }else {
                     alert("sessionStorage n'est pas supporté");
                   };
-                console.log(form.name.value);
-                console.log(form.firstname.value);
                 signature.className = "signatureVisible";
             };
         });

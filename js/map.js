@@ -1,10 +1,9 @@
 var map = {
     
     // Initialisation de la map
-    init: function(lat, lng, req, marker, form){
+    init: function(lat, lng){
         map.lat = lat;
         map.lng = lng;
-        map.form = form;
 
         //appel des méthodes
         map.makeMap();
@@ -17,5 +16,7 @@ var map = {
                     minZoom: 1,
                     maxZoom: 20
                 }).addTo(map.mapIs);
+        console.log(map.mapIs);
     }
+
 };
