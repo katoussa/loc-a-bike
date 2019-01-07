@@ -63,7 +63,8 @@ var globalMain = {
         },
         reserve: {
             validBtn: document.getElementById("validSign"),
-            footerText: document.getElementById("footerText")
+            footerText: document.getElementById("footerText"),
+            station: ""
         }
     },
     methods: {
@@ -145,7 +146,8 @@ var globalMain = {
                 globalMain.data.reserve.validBtn,
                 globalMain.data.reserve.footerText,
                 globalMain.data.form.name,
-                globalMain.data.form.firstname
+                globalMain.data.form.firstname,
+                globalMain.data.reserve.station
             )
         }
     }
