@@ -11,8 +11,8 @@ var reserve = {
 
     afficheReserve: function(i){
         reserve.validBtn.addEventListener("click", function(){
-            console.log("stations.stations = " + reserve.station);
-            reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + stations.stations[i];
+            console.log(reserve.station.name);
+            reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + reserve.station.name;
         });
     }
 
