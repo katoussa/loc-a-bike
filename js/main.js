@@ -145,8 +145,7 @@ var globalMain = {
                 globalMain.data.reserve.validBtn,
                 globalMain.data.reserve.footerText,
                 globalMain.data.form.name,
-                globalMain.data.form.firstname,
-                globalMain.data.stations.stations
+                globalMain.data.form.firstname
             )
         }
     }

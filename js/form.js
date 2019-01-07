@@ -29,7 +29,7 @@ var form = {
 
         if(form.name.value.length < 3 || form.firstname.value.length < 3){
             form.button.disabled = true;
-        }else if(form.name.value.length > 3 && form.firstname.value.length > 3){
+        }else if(form.name.value.length > 2 && form.firstname.value.length > 3){
             form.button.disabled = false;
         };
     },

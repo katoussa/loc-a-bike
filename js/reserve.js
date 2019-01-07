@@ -1,10 +1,9 @@
 var reserve = {
-    init: function(validBtn, footerText, name, firstname, stationListe){
+    init: function(validBtn, footerText, name, firstname){
         reserve.validBtn = validBtn;
         reserve.footerText = footerText;
         reserve.name = name;
         reserve.firstname = firstname;
-        stations.stations = stationListe;
 
         reserve.afficheReserve();
 
@@ -12,7 +11,8 @@ var reserve = {
 
     afficheReserve: function(i){
         reserve.validBtn.addEventListener("click", function(){
-            reserve.footerText.innerHTML = reserve.name.value + " " + reserve.firstname.value + " a réservé 1 vélo à la station " + stations.stations[i].name;
+            console.log("stations.stations = " + reserve.station);
+            reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + stations.stations[i];
         });
     }
 
