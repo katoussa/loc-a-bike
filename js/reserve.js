@@ -13,6 +13,8 @@ var reserve = {
     },
 
     afficheReserve: function(){
+        reserve.sec = 00;
+        reserve.min = 20;
         reserve.validBtn.addEventListener("click", function(){
             console.log(reserve.station.name);
             reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + reserve.station.name;
@@ -27,8 +29,6 @@ var reserve = {
     },
 
     takeOffSec: function(){
-        reserve.sec = 00;
-        reserve.min = 20;
         if(reserve.sec != 0){
             reserve.sec--;
         }else if(reserve.sec === 0){
