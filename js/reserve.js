@@ -23,7 +23,7 @@ var reserve = {
 
     makeCountDown: function(){
         reserve.time = reserve.nowPlus(1200);
-        reserve.timer = setInterval(reserve.takeOffSec(), 1000);
+        reserve.timer = setInterval(reserve.takeOffSec, 1000);
     },
 
     takeOffSec: function(){
@@ -44,7 +44,6 @@ var reserve = {
     },
 
     nowPlus: function(n){
-        // returns timestamp fo (now + n seconds)
         return Date.now()+1000*n;
     }
 
