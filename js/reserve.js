@@ -13,8 +13,6 @@ var reserve = {
     },
 
     afficheReserve: function(){
-        reserve.sec = 00;
-        reserve.min = 20;
         reserve.validBtn.addEventListener("click", function(){
             console.log(reserve.station.name);
             reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + reserve.station.name;
@@ -24,7 +22,8 @@ var reserve = {
     },
 
     makeCountDown: function(){
-        reserve.time = reserve.nowPlus(1200);
+        reserve.sec = 00;
+        reserve.min = 01;
         reserve.timer = setInterval(reserve.takeOffSec, 1000);
     },
 
@@ -41,10 +40,6 @@ var reserve = {
             reserve.footerText.innerHTML = "";
             reserve.timerP.innerHTML = "Le délai est écoulé, la réservation a pris fin.";
         };
-    },
-
-    nowPlus: function(n){
-        return Date.now()+1000*n;
     }
 
 }
