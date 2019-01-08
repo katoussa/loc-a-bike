@@ -23,7 +23,7 @@ var reserve = {
 
     makeCountDown: function(){
         reserve.sec = 00;
-        reserve.min = 01;
+        reserve.min = 20;
         reserve.timer = setInterval(reserve.takeOffSec, 1000);
     },
 
