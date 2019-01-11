@@ -9,11 +9,21 @@ var globalMain = {
             cross: ".cross"
         },
         slider: {
-            id: "#slider",
             slide: ".slide",
+            slideText: ".slideText",
             prevBtn : "#prevBtn",
             nextBtn: "#nextBtn",
             pauseBtn: "#pauseBtn",
+            imgText: [
+                "Sur la carte, vous pouvez voir les stations de la ville.",
+                "Les markers bleus indiquent les stations où au moins un vélo est disponible, les rouges celles où il n'y en a aucun.",
+                "Vous pouvez cliquer sur la station de votre choix. Un popup contenant son nom s'ouvre.",
+                "Cliquez sur le bouton 'plus d'infos' pour connaître les informations concernant cette station",
+                "Si vous souhaitez réserver un vélo dans cette station, entrez votre nom et votre prénom, puis validez. Au moins trois caractères sont requis pour chacun.",
+                "Signez. Vous pouvez effacer la signature, ou annuler la réservation en cours.",
+                "Une fois la réservation signée et validée, une confirmation et un compte à rebours s'affichent en-dessous de la carte. Vous pouvez annuler la réservation en cours.",
+                "Si vous effectuez une nouvelle réservation, la précédante est automatiquement annulée, et le compte à rebours redémarre."
+            ],
             imgs: ["img/bike-rental-1.jpg",
             "img/bike-rental-2.jpeg",
             "img/bike-rental-3.jpg",
@@ -90,11 +100,12 @@ var globalMain = {
                     globalMain.data.menu.cross
             );
                     
-            objSlider.init(globalMain.data.slider.id, 
+            objSlider.init(globalMain.data.slider.slideText, 
                 globalMain.data.slider.slide,
                 globalMain.data.slider.prevBtn,
                 globalMain.data.slider.nextBtn,
                 globalMain.data.slider.pauseBtn,
+                globalMain.data.slider.imgText,
                 globalMain.data.slider.imgs,
                 globalMain.data.slider.time
             );

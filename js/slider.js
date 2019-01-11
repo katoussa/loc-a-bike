@@ -1,15 +1,15 @@
 var slider = {
-  init: function(id, slide, prevBtn, nextBtn, pauseBtn, imgs, time, btn){
-    slider.id = id;
-    slider.slide = slide;
+  init: function(slideText, slide, prevBtn, nextBtn, pauseBtn, imgText, imgs, time){
+    slider.slideText = slideText;
+		slider.slide = slide;
     slider.prevBtn = prevBtn;
     slider.nextBtn = nextBtn;
-    slider.pauseBtn = pauseBtn;
+		slider.pauseBtn = pauseBtn;
+		slider.imgText = imgText;
     slider.imgs = imgs;
     slider.time = time;
-    slider.btn = btn;
-    slider.indexImg = -1;
-    slider.nbreImg = imgs.length;
+		slider.i = 0;
+		slider.nbreImg = slider.imgs.length;
   
     //Appel des méthodes
     slider.onKeyboard();
@@ -20,14 +20,15 @@ var slider = {
 
   // Méthode de défilement vers image suivante
   nextImg: function(){
-    slider.indexImg++;
-    if(slider.indexImg > slider.nbreImg - 1) {
-      slider.indexImg = 0;
+    slider.i++;
+    if(slider.i > slider.nbreImg - 1) {
+      slider.i = 0;
     };
-    if(slider.indexImg < 0) {
-      slider.indexImg = slider.nbreImg + 1;
+    if(slider.i < 0) {
+      slider.i = slider.nbreImg + 1;
     };
-    document.querySelector(slider.slide).src = slider.imgs[slider.indexImg];  
+    document.querySelector(slider.slide).src = slider.imgs[slider.i]; 
+		document.querySelector(slider.slideText).innerHTML = slider.imgText[slider.i];
   },
 
   // Méthode de défilement auto
@@ -49,14 +50,15 @@ var slider = {
 
   //Méthode de défilement vers image précédente
   prevImg: function(){
-    slider.indexImg--;
-    if (slider.indexImg > 0) {
-      slider.indexImg = slider.indexImg -1;
+    slider.i--;
+    if (slider.i > 0) {
+      slider.i = slider.i -1;
     }
-    if (slider.indexImg < 0) {
-      slider.indexImg = slider.nbreImg -1;
+    if (slider.i < 0) {
+      slider.i = slider.nbreImg -1;
     };
-    document.querySelector(slider.slide).src = slider.imgs[slider.indexImg];
+    document.querySelector(slider.slide).src = slider.imgs[slider.i];
+    document.querySelector(slider.slideText).innerHTML = slider.imgText[slider.i];  
   },
 
   //Méthode de click sur boutons

@@ -196,7 +196,8 @@ h3{
     background-color: #dddddd;
 }
 
-.footerText{
+.footerText,
+.countDown{
     text-align: center;
     font-size: 2.5em;
 }
