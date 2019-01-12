@@ -16,7 +16,7 @@ var reserve = {
         reserve.validBtn.addEventListener("click", function(){
             if(reserve.timer){
                 reserve.resetReservation();
-                reserve.stationRes.available_bikes--;
+                reserve.stationRes.available_bikes++;
                 console.log(reserve.station.name);
                 reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + reserve.station.name;
                 reserve.station.available_bikes--;
