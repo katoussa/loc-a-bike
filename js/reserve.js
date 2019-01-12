@@ -9,29 +9,26 @@ var reserve = {
         reserve.min = min;
         reserve.timerP = timerP;
 
-        reserve.afficheReserve();
-    },
-
-    afficheReserve: function(){
-        reserve.validBtn.addEventListener("click", function(){
-            if(reserve.timer){
-                reserve.resetReservation();
-                reserve.newReservation();
-                console.log("nom de la station: " + reserve.station.name);
-                console.log("nbre de vélos dispos: " + reserve.station.available_bikes);
-            }else{
-                reserve.newReservation();
-            };
-            
-        });
+        reserve.newReservation();
     },
 
     newReservation: function(){
-        console.log(reserve.station.name);
-        reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + reserve.station.name;
-        reserve.station.available_bikes--;
-        console.log("nbre de vélos dispos: " + reserve.station.available_bikes);
-        reserve.makeCountDown();
+        reserve.validBtn.addEventListener("click", function(){
+            if(reserve.timer){
+                reserve.resetReservation();
+                console.log(reserve.station.name);
+                reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + reserve.station.name;
+                reserve.station.available_bikes--;
+                console.log("nbre de vélos dispos: " + reserve.station.available_bikes);
+                reserve.makeCountDown();
+            }else{
+                console.log(reserve.station.name);
+                reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + reserve.station.name;
+                reserve.station.available_bikes--;
+                console.log("nbre de vélos dispos: " + reserve.station.available_bikes);
+                reserve.makeCountDown();
+            };
+        });
     },
 
     makeCountDown: function(){
