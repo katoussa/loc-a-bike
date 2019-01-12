@@ -77,7 +77,8 @@ var globalMain = {
             station: "",
             sec: "",
             min: "",
-            timerP: document.getElementById("countDown")
+            timerP: document.getElementById("countDown"),
+            annulBtn: document.getElementById("annulBtn")
         }
     },
     methods: {
@@ -164,7 +165,8 @@ var globalMain = {
                 globalMain.data.reserve.station,
                 globalMain.data.reserve.sec,
                 globalMain.data.reserve.min,
-                globalMain.data.reserve.timerP
+                globalMain.data.reserve.timerP,
+                globalMain.data.reserve.annulBtn
             )
         }
     }
