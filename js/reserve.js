@@ -9,29 +9,27 @@ var reserve = {
         reserve.min = min;
         reserve.timerP = timerP;
 
-        reserve.newReservation();
+        reserve.reservation();
     },
 
-    newReservation: function(){
+    reservation: function(){
         reserve.validBtn.addEventListener("click", function(){
             if(reserve.timer){
                 reserve.resetReservation();
-                reserve.stationRes.available_bikes++;
-                console.log(reserve.station.name);
-                reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + reserve.station.name;
-                reserve.station.available_bikes--;
-                console.log("nbre de vélos dispos: " + reserve.station.available_bikes);
-                reserve.makeCountDown();
-                reserve.stationRes = reserve.station;
+                reserve.newReservation();
             }else{
-                console.log(reserve.station.name);
-                reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + reserve.station.name;
-                reserve.station.available_bikes--;
-                console.log("nbre de vélos dispos: " + reserve.station.available_bikes);
-                reserve.makeCountDown();
-                reserve.stationRes = reserve.station;
+                reserve.newReservation();
             };
         });
+    },
+
+    newReservation: function(){
+        console.log(reserve.station.name);
+        reserve.footerText.innerHTML = "Un vélo est réservé au nom de " + reserve.name.value + " " + reserve.firstname.value + " à la station " + reserve.station.name;
+        reserve.station.available_bikes--;
+        console.log("nbre de vélos dispos: " + reserve.station.available_bikes);
+        reserve.makeCountDown();
+        reserve.stationRes = reserve.station;
     },
 
     makeCountDown: function(){
@@ -57,6 +55,7 @@ var reserve = {
 
     resetReservation: function(){
         clearInterval(reserve.timer);
+        reserve.stationRes.available_bikes++;
     }
 
 }
