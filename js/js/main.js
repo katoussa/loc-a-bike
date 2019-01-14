@@ -20,19 +20,17 @@ var globalMain = {
                 "Vous pouvez cliquer sur la station de votre choix. Un popup contenant son nom s'ouvre.",
                 "Cliquez sur le bouton 'plus d'infos' pour connaître les informations concernant cette station",
                 "Si vous souhaitez réserver un vélo dans cette station, entrez votre nom et votre prénom, puis validez. Au moins trois caractères sont requis pour chacun.",
-                "Signez. Vous pouvez effacer la signature. Sinon, validez.",
-                "Une fois la réservation signée et validée, une confirmation et un compte à rebours s'affichent en-dessous de la carte.",
-                " Vous pouvez annuler la réservation en cours. Une nouvelle réservation annule la précédente."
+                "Signez. Vous pouvez effacer la signature, ou annuler la réservation en cours.",
+                "Une fois la réservation signée et validée, une confirmation et un compte à rebours s'affichent en-dessous de la carte. Vous pouvez annuler la réservation en cours.",
+                "Si vous effectuez une nouvelle réservation, la précédante est automatiquement annulée, et le compte à rebours redémarre."
             ],
-            imgs: ["img/br1.png",
-                "img/br2.png",
-                "img/br3.png",
-                "img/br4.png",
-                "img/br5.png",
-                "img/br6.png",
-                "img/br7.png",
-                "img/br8.png"
-            ],
+            imgs: ["img/bike-rental-1.jpg",
+            "img/bike-rental-2.jpeg",
+            "img/bike-rental-3.jpg",
+            "img/bike-rental-4.jpg",
+            "img/bike-rental-5.jpg",
+            "img/bike-rental-6.jpg",
+            "img/bike-rental-7.jpg"],
             time: 5000
         },
         services: {

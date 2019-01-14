@@ -23,6 +23,6 @@ var infos = {
             document.getElementById(infos.noBikes).className = "noBikesVisible";
             document.getElementById(infos.formInvisible).className = "formInvisible";
         };
-        sign.noDraw();
+
     }
 };

@@ -91,6 +91,7 @@
 }
 
 .signatureVisible{
+    margin-top: 2em;
     display: block;
     height: 220px;
     border-radius: 5px;

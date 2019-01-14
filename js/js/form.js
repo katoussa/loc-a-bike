@@ -9,8 +9,6 @@ var form = {
         form.setFirstame = setFirstame;
         form.signature = signature;
 
-        
-        form.signature.className = "signature";
         services.getStorageName();
         services.getStorageFirstname();
         form.checkForm();

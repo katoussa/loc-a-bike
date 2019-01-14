@@ -56,14 +56,10 @@ var sign = {
 
     deleteDraw: function(){ //effacer le dessin
         sign.clear.addEventListener('click', function(){
-            sign.noDraw();
+            sign.ctx.clearRect(0, 0, sign.canvas.width, sign.canvas.height);
+            sign.ctx.beginPath();
+            sign.pts = 0;
         });
-    },
-
-    noDraw: function(){
-        sign.ctx.clearRect(0, 0, sign.canvas.width, sign.canvas.height);
-        sign.ctx.beginPath();
-        sign.pts = 0;
     },
 
     enableValid: function(){
