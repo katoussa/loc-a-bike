@@ -22,12 +22,14 @@ var sign = {
 
     makeDraw: function(){
         sign.canvas.addEventListener('mousemove', function(e){
-            if(sign.click){
-                // dessiner des point
+            if(sign.click){ //créer des points et les relier
+                sign.ctx.lineTo(e.offsetX, e.offsetY);
+                sign.ctx.stroke();          
                 sign.ctx.beginPath();
-                sign.ctx.arc(e.offsetX, e.offsetY, 3, 0, 2 * Math.PI, false);
-                sign.ctx.fillStyle = '#000';
+                sign.ctx.arc(e.offsetX, e.offsetY, 1, 0, Math.PI*2);
                 sign.ctx.fill();
+                sign.ctx.beginPath();
+                sign.ctx.moveTo(e.offsetX, e.offsetY);          
             }else if(!sign.click){
 
             };
@@ -35,21 +37,22 @@ var sign = {
         
     },
 
-    drawOnClick: function(){
+    drawOnClick: function(){// faire un dessin
         sign.canvas.addEventListener('mousedown', function(){
             sign.click = true;
         });
     },
     
-    stopDraw: function(){
+    stopDraw: function(){ //arrêter le dessin
         sign.canvas.addEventListener('mouseup', function(){
             sign.click = false;
         });
     },
 
-    deleteDraw: function(){
+    deleteDraw: function(){ //effacer le dessin
         sign.clear.addEventListener('click', function(){
             sign.ctx.clearRect(0, 0, sign.canvas.width, sign.canvas.height);
+            sign.ctx.beginPath();
         });
     }
 
