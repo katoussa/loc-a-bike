@@ -1,15 +1,18 @@
 var sign = {
-    init: function(canvas, ctx, img, clear){
+    init: function(canvas, ctx, img, clear, pts, btn){
         sign.canvas = canvas;
         sign.ctx = ctx;
         sign.img = img;
         sign.clear = clear;
+        sign.pts = pts;
+        sign.btn = btn;
 
         sign.createCtx();
         sign.drawOnClick();
         sign.stopDraw();
         sign.makeDraw();
         sign.deleteDraw();
+        sign.enableValid();
     },
 
     createCtx: function(){
@@ -29,7 +32,8 @@ var sign = {
                 sign.ctx.arc(e.offsetX, e.offsetY, 1, 0, Math.PI*2);
                 sign.ctx.fill();
                 sign.ctx.beginPath();
-                sign.ctx.moveTo(e.offsetX, e.offsetY);          
+                sign.ctx.moveTo(e.offsetX, e.offsetY);    
+                sign.pts++;      
             }else if(!sign.click){
 
             };
@@ -46,6 +50,7 @@ var sign = {
     stopDraw: function(){ //arrêter le dessin
         sign.canvas.addEventListener('mouseup', function(){
             sign.click = false;
+            sign.enableValid();
         });
     },
 
@@ -53,7 +58,16 @@ var sign = {
         sign.clear.addEventListener('click', function(){
             sign.ctx.clearRect(0, 0, sign.canvas.width, sign.canvas.height);
             sign.ctx.beginPath();
+            sign.pts = 0;
         });
+    },
+
+    enableValid: function(){
+        if(sign.pts > 3){
+            sign.btn.className = "visible";
+        }else{
+            sign.btn.className = "invisible";
+        };
     }
 
 }

@@ -1,5 +1,5 @@
 var reserve = {
-    init: function(validBtn, footerText, name, firstname, station, sec, min, timerP, annulBtn){
+    init: function(validBtn, footerText, name, firstname, station, sec, min, timerP, annulBtn, signature){
         reserve.validBtn = validBtn;
         reserve.footerText = footerText;
         reserve.name = name;
@@ -9,6 +9,7 @@ var reserve = {
         reserve.min = min;
         reserve.timerP = timerP;
         reserve.annulBtn = annulBtn;
+        reserve.signature = signature;
 
         reserve.reservation();
         reserve.annuleReservation();
@@ -16,6 +17,7 @@ var reserve = {
 
     reservation: function(){
         reserve.validBtn.addEventListener("click", function(){
+            reserve.signature.className = "signature";
             if(reserve.timer){
                 reserve.notReservation();
                 reserve.newReservation();

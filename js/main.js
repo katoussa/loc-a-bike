@@ -69,7 +69,8 @@ var globalMain = {
             canvas: document.getElementById("signCanvas"),
             ctx: "",
             img: "img/plume.png",
-            clear: document.getElementById("clearSign")
+            clear: document.getElementById("clearSign"),
+            pts: 0
         },
         reserve: {
             validBtn: document.getElementById("validSign"),
@@ -154,7 +155,9 @@ var globalMain = {
                 globalMain.data.sign.canvas,
                 globalMain.data.sign.ctx,
                 globalMain.data.sign.img,
-                globalMain.data.sign.clear
+                globalMain.data.sign.clear,
+                globalMain.data.sign.pts,
+                globalMain.data.reserve.validBtn
             );
 
             objReserve.init(
@@ -166,8 +169,9 @@ var globalMain = {
                 globalMain.data.reserve.sec,
                 globalMain.data.reserve.min,
                 globalMain.data.reserve.timerP,
-                globalMain.data.reserve.annulBtn
-            )
+                globalMain.data.reserve.annulBtn,
+                globalMain.data.sign.signature
+            );
         }
     }
 };

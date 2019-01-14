@@ -92,9 +92,10 @@
                     </div>
 
                     <div id="signature" class="signature">
-                        <canvas id="signCanvas" class="signCanvas" width="540px" height="225px"></canvas>
+                        <h3 class="signez">Signez ici:</h3>
+                        <canvas id="signCanvas" class="signCanvas" width="540px" height="155px"></canvas>
                         <button type="button" id="clearSign">Effacer</button>
-                        <button type="button" id="validSign">Valider</button>
+                        <button type="button" id="validSign" class="invisible">Valider</button>
                     </div>
                 </div>
             </div>
@@ -103,6 +104,7 @@
         <footer id="footer" class="footer">
             <p id="footerText" class="footerText">Vous n'avez pas de réservation en cours.</p>
             <p id="countDown" class="countDown"></p>
+            <button type="button" id="annulBtn" class="annulBtn">Annuler la réservation</button>
         </footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

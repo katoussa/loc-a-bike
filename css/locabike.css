@@ -193,7 +193,8 @@ h3{
 /* Footer */
 
 .footer{
-    background-color: #dddddd;
+    background-color: #ffffffaf;
+    padding-bottom: 2em;
 }
 
 .footerText,

@@ -7,12 +7,13 @@ var form = {
         form.messError2 = messError2;
         form.setName = setName;
         form.setFirstame = setFirstame;
+        form.signature = signature;
 
         services.getStorageName();
         services.getStorageFirstname();
         form.checkForm();
         form.btnActive();
-        form.validForm(signature);
+        form.validForm(form.signature);
     },
 
     checkForm: function(){
@@ -42,7 +43,7 @@ var form = {
     validForm: function(signature){
         form.button.addEventListener("click", function(){
             if(form.regName === false || form.regFirstname === false){
-                signature.className = "signature";
+                form.signature.className = "signature";
             }else{
                 if(typeof sessionStorage!='undefined') {
                     localStorage.setItem("form.setName", form.name.value);
@@ -50,7 +51,7 @@ var form = {
                   }else {
                     alert("sessionStorage n'est pas supporté");
                   };
-                signature.className = "signatureVisible";
+                form.signature.className = "signatureVisible";
             };
         });
     }
