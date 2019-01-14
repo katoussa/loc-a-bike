@@ -63,6 +63,9 @@ var reserve = {
     annuleReservation: function(){
         reserve.annulBtn.addEventListener("click", function(){
             reserve.notReservation();
+            reserve.timerP.innerHTML = "Votre réservation a bien été annulée.";
+            reserve.footerText.innerHTML = "";
+            reserve.annulBtn.className = "annulBtn";
         });
     }
 
