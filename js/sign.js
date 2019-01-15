@@ -1,15 +1,18 @@
 var sign = {
-    init: function(canvas, ctx, img, clear){
+    init: function(canvas, ctx, img, clear, pts, btn){
         sign.canvas = canvas;
         sign.ctx = ctx;
         sign.img = img;
         sign.clear = clear;
+        sign.pts = pts;
+        sign.btn = btn;
 
         sign.createCtx();
         sign.drawOnClick();
         sign.stopDraw();
         sign.makeDraw();
         sign.deleteDraw();
+        sign.enableValid();
     },
 
     createCtx: function(){
@@ -22,35 +25,49 @@ var sign = {
 
     makeDraw: function(){
         sign.canvas.addEventListener('mousemove', function(e){
-            if(sign.click){
-                // dessiner des point
-                sign.ctx.beginPath();
-                sign.ctx.arc(e.offsetX, e.offsetY, 3, 0, 2 * Math.PI, false);
-                sign.ctx.fillStyle = '#000';
-                sign.ctx.fill();
-            }else if(!sign.click){
-
+            if(sign.click){ //créer des points et les relier
+                sign.ctx.lineTo(e.offsetX, e.offsetY);
+                sign.ctx.stroke();           
+                sign.ctx.beginPath(); 
+                sign.ctx.moveTo(e.offsetX, e.offsetY);  
+                sign.pts++;      
             };
         }.bind(sign));
         
     },
 
-    drawOnClick: function(){
+    drawOnClick: function(){// faire un dessin
         sign.canvas.addEventListener('mousedown', function(){
             sign.click = true;
         });
     },
     
-    stopDraw: function(){
+    stopDraw: function(){ //arrêter le dessin
         sign.canvas.addEventListener('mouseup', function(){
-            sign.click = false;
+            sign.click = false;           
+            sign.ctx.beginPath(); 
+            sign.enableValid();
         });
     },
 
-    deleteDraw: function(){
+    deleteDraw: function(){ //effacer le dessin
         sign.clear.addEventListener('click', function(){
-            sign.ctx.clearRect(0, 0, sign.canvas.width, sign.canvas.height);
+            sign.noDraw();
         });
+    },
+
+    noDraw: function(){
+        sign.ctx.clearRect(0, 0, sign.canvas.width, sign.canvas.height);
+        sign.ctx.beginPath();
+        sign.pts = 0;
+    },
+
+    enableValid: function(){
+        if(sign.pts > 3){
+            sign.btn.className = "visible";
+        }else{
+            sign.btn.className = "invisible";
+        };
     }
 
 }

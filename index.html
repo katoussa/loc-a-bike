@@ -16,32 +16,16 @@
     </head>
 
     <body>
-        <header id="header" class="menu">
-            <div id="nav" class="nav">
-                <ul>
-                    <li><a href="#locabike" data-ajax="false">Accueil</a></li>
-                    <li><a href="#slider" data-ajax="false">Photos</a></li>
-                    <li><a href="#map" data-ajax="false">Carte</a></li>
-                    <li><a href="#footer" data-ajax="false">Contact</a></li>
-                    <li clas="navtop">
-                        <div class="navBtn">
-                            <h3>Menu</h3>
-                            <button id="burger" class="burger"></button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </header>
-
-        <section id="locabike" class="locabike">
+        <header id="locabike" class="locabike">
             <h1>LOC<span>a</span>BIKE</h1>
             <h2></h2>
-        </section>
+        </header>
 
         <section id="slider" class="slider">
             <div id="slideshow" class="slideshow">
                 <div>
-                    <img name="slide" id="slide" class="slide" src="img/bike-rental-1.jpg">
+                    <img name="slide" id="slide" class="slide" src="img/br1.png">
+                    <p id="slideText" class="slideText">Sur la carte, vous pouvez voir les stations de la ville.</p>
                 </div>
             </div>
             <div class="button">
@@ -49,7 +33,7 @@
                 <button id="pauseBtn" class="pauseBtn"> </button>
                 <button id="nextBtn" class="nextBtn"> </button>
             </div>
-
+    
         </section>
 
         <section id="map-container" class="map-container">
@@ -91,28 +75,31 @@
                     </div>
 
                     <div id="signature" class="signature">
-                        <canvas id="signCanvas" class="signCanvas" width="540px" height="225px"></canvas>
+                        <h3 class="signez">Signez ici:</h3>
+                        <canvas id="signCanvas" class="signCanvas" width="540px" height="155px"></canvas>
                         <button type="button" id="clearSign">Effacer</button>
-                        <button type="button" id="validSign">Valider</button>
+                        <button type="button" id="validSign" class="invisible">Valider</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <footer id="footer" class="footer">
-
+            <p id="footerText" class="footerText">Vous n'avez pas de réservation en cours.</p>
+            <p id="countDown" class="countDown"></p>
+            <button type="button" id="annulBtn" class="annulBtn">Annuler la réservation</button>
         </footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js" ></script>
-        <script src="js/nav.js"></script>
+        <script src="js/services.js"></script>
         <script src="js/slider.js"></script>
         <script src="js/map.js"></script>
-        <script src="js/services.js"></script>
         <script src="js/stations.js"></script>
         <script src="js/infos.js"></script>
         <script src="js/form.js"></script>
         <script src="js/sign.js"></script>
+        <script src="js/reserve.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

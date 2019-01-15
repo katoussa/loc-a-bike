@@ -3,6 +3,8 @@
     margin: 5em auto;
     display: flex;
     flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
 }
 
 .map-content{
@@ -19,23 +21,25 @@
     height: 600px;
     border-radius: 10px;
     background-color: antiquewhite;
+    border-radius: 5px;
 }
 
 .stations{
     width: 540px;
-    background-color: #ff0000;
     height: 100%;
+    margin-left: 5px;
 }
 
 .map,
 .infostations,
 .signature{
     margin: 0;
-    padding: 0;
+    padding: 0 1em;
+    border-radius: 5px;
 }
 
 .infostations{
-    height: 350px;
+    height: 300px;
 }
 
 .btnInfos{
@@ -48,6 +52,11 @@
 
 .formVisible{
     display: block;
+}
+
+.elemFormInvisible,
+.booking{
+    margin-top: 0.5em;
 }
 
 .noBikes{
@@ -82,11 +91,37 @@
 }
 
 .signatureVisible{
+    margin-top: 2em;
     display: block;
     height: 220px;
-    background-color: rgb(114, 189, 219);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.signez{
+    text-align: center;
+    font-weight: 700;
 }
 
 .signature button{
     bottom: 0;
+}
+
+.invisible{
+    display: none;
+}
+
+.visible{
+    display: inline-block;
+}
+
+.annulBtn{
+    display: none;
+}
+
+.annulBtn1{
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+    border-radius: 5px;
 }

@@ -1,120 +1,121 @@
 .slideshow {
-    margin: 0 auto;
-    position: relative;
-    width: 900px;
-    height: 525px;
-    padding: 10px;
-    pointer-events: none;
-  }
+  margin: 0 auto;
+  position: relative;
+  width: 75%;
+  height: 600px;
+  padding: 10px;
+  pointer-events: none;
+}
   
-  .slideshow > div {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-  }
+.slideshow > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
 
-  .slideshow > div > img{
-    border: solid 5px rgba(0, 0, 0, 0.75);
-    border-radius: 10px;
-    height: 100%;
-  }
-  
-  .slideshow > div > img,
-  .slideshow > div > figcaption {
-    width: 100%;
-  }
+.slideshow > div > p,
+.slideshow > div > img{
+  margin: 2px 0;
+}
 
-  .button{
-    width: 300px;
-    margin: 0 auto;
-  }
+.slideshow > div > p{
+  border: solid 2px rgb(0, 0, 0);
+  border-radius: 10px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 5px;
+}
 
-  .prevBtn,
-  .pauseBtn,
-  .playBtn,
-  .nextBtn{
-    cursor: pointer;
-    z-index: 10;
-    display: inline-block;
-    margin: 5px;
-  }
+.slideshow > div > img{
+  /*border: solid 5px rgba(0, 0, 0, 0.75);*/
+  border-radius: 10px;
+  height: 525px;
+}
 
-  .button button{
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-  }
+.slideshow > div > img,
+.slideshow > div > figcaption {
+  width: 100%;
+}
 
-  .button button:hover{
-    transform: scale(1.1);
-  }
+.button{
+  width: 300px;
+  margin: 0 auto;
+}
 
-  .prevBtn{
-    background: url(../img/prev.png) no-repeat center;
-    background-size: cover;
-  }
+.prevBtn,
+.pauseBtn,
+.playBtn,
+.nextBtn{
+  cursor: pointer;
+  z-index: 10;
+  display: inline-block;
+  margin: 5px;
+}
 
-  .pauseBtn{
-    background: url(../img/pause.png) no-repeat center;
-    background-size: cover;
-  }
+.button button{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
 
-  .playBtn{
-    background: url(../img/play.png) no-repeat center;
-    background-size: cover;
-  }
+.button button:hover{
+  transform: scale(1.1);
+}
 
-  .nextBtn{
-    background: url(../img/next.png) no-repeat center;
-    background-size: cover;
-  }
+.prevBtn{
+  background: url(../img/prev.png) no-repeat center;
+  background-size: cover;
+}
 
-  @media screen and (max-width: 1280px){
+.pauseBtn{
+  background: url(../img/pause.png) no-repeat center;
+  background-size: cover;
+}
 
-    .slideshow{
-    width: 800px;
-    height: 450px;
-    }
+.playBtn{
+  background: url(../img/play.png) no-repeat center;
+  background-size: cover;
+}
+
+.nextBtn{
+  background: url(../img/next.png) no-repeat center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1280px){
+  .slideshow{
+    height: 375px;
+  }  
 }
 
 @media screen and (max-width: 992px){
-
-    .slideshow{
-    width: 700px;
+  .slideshow{
     height: 375px;
-    }
-
-    .button{
-    display: none;
-    }
-
+  }
+  .button{
+  display: none;
+  }
 }
 
 @media screen and (max-width: 780px){
-
-    .slideshow{
-    width: 550px;
-    width: 300px;
-    }
-
+  .slideshow{
+  height: 300px;
+  }
 }
 
 @media screen and (max-width: 600px){
-
-    .slideshow{
-    width: 420px;
-    height: 250px;
-    }
-
+  .slideshow{
+  height: 250px;
+  }
 }
 
 @media screen and (max-width: 450px){
-
-    .slideshow{
-    width: 350px;
-    height: 200px;
-    }
-
+  .slideshow{
+  height: 200px;
+  }
 }
