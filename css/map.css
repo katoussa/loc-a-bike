@@ -7,6 +7,18 @@
     border-radius: 5px;
 }
 
+.legende{
+    margin-left: 1em;
+}
+
+.legende .blue{
+    color: rgb(0, 80, 209);
+}
+
+.legende .red{
+    color: #ff0000;
+}
+
 .map-content{
     display: flex;
     flex-direction: row;
@@ -25,7 +37,7 @@
 }
 
 .stations{
-    width: 540px;
+    width: 28%;
     height: 100%;
     margin-left: 5px;
 }
@@ -39,7 +51,7 @@
 }
 
 .infostations{
-    height: 300px;
+    height: 100%;
 }
 
 .btnInfos{
@@ -91,9 +103,8 @@
 }
 
 .signatureVisible{
-    margin-top: 2em;
+    margin-top: 1.5em;
     display: block;
-    height: 220px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.75);
 }
@@ -124,4 +135,35 @@
     margin: 0 auto;
     font-size: 20px;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 1200px){
+    .btnForm {
+        width: 100px;
+        height: 20px;
+        cursor: pointer;
+        font-weight: 800;
+    }
+
+    .infostations h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .map-content{
+        flex-direction: column;
+    }
+
+    .map,
+    .stations{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 780px){
+    .signatureVisible{
+        width: 75%;
+        margin: 0 auto;
+    }
 }

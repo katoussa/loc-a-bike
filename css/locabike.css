@@ -1,12 +1,5 @@
 /*general*/
 
-html,
-body{
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
 body{
     background: url(../img/bitume1.jpg) center no-repeat;
     background-size: cover;
@@ -14,6 +7,12 @@ body{
 
 .ui-loader{
     display: none;
+}
+
+header,
+section,
+footer{
+    display: block;
 }
 
 a, a-webkit-any-link{
@@ -42,15 +41,11 @@ h3{
 
 /*locabike section*/
 
-.locabike{
-    margin-top: 5em;
-}
-
 .locabike h1{
     color: #ff4040;
     font-size: 7em;
     line-height: 0.8;
-    margin : 0.5em auto 0 auto;
+    margin : 0.25em auto 0 auto;
     text-align: center;
     text-shadow: 2px 2px 2px rgb(255, 170, 60);
 }
@@ -78,47 +73,52 @@ h3{
 }
 
 
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 1200px){
 
-    .nav .navBtn{
-        width: 150px;
+    .locabike h1{
+        font-size: 6em;
     }
 
-    .nav li{
-        font-size: 1.25em;
+    .footerText,
+    .countDown{
+        font-size: 2em;
     }
 }
 
 @media screen and (max-width: 992px){
-    /*navBtn*/
-    .burger{
-        background: url(https://svgsilh.com/svg_v2/1292814.svg) center no-repeat;
-        background-size: cover;
-        background-color: rgb(255, 60, 60);
-
+    .locabike h1{
+        font-size: 6em;
     }
     
-    .cross{
-        background: url(https://svgsilh.com/svg_v2/24846.svg) center no-repeat;
-        background-size: cover;
-        background-color: rgb(255, 60, 60);
-    }
-
-    .nav h3,
-    .nav2 .navBtn h3{
-        font-size: 1em;
+    .footerText, .countDown {
+        font-size: 1.5em;
     }
 
 }
 
 @media screen and (max-width: 780px){
-    
+    .locabike h1{
+        font-size: 5em;
+    }
+
+    .footerText, .countDown {
+        font-size: 1.25em;
+    }
 }
 
 @media screen and (max-width: 600px){
-    
+    .locabike h1{
+        font-size: 4em;
+    }
 }
 
 @media screen and (max-width: 450px){
-    
+    .locabike h1{
+        font-size: 3em;
+    }
+
+    .footerText,
+    .countDown{
+        font-size: 1em;
+    }
 }
