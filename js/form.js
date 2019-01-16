@@ -56,6 +56,7 @@ var form = {
                 form.signature.className = "signatureVisible";
             };
             sign.noDraw();
+            sign.btn.className = "invisible";
         });
     }
 };
