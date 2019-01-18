@@ -6,11 +6,16 @@ var sign = {
         sign.clear = clear;
         sign.pts = pts;
         sign.btn = btn;
+        var x;
+        var y;
 
         sign.createCtx();
         sign.drawOnClick();
+        sign.drawOnTouch();
         sign.stopDraw();
+        sign.stoDrawOnTouch();
         sign.makeDraw();
+        sign.makeDrawTouch();
         sign.deleteDraw();
         sign.enableValid();
     },
@@ -25,7 +30,7 @@ var sign = {
 
     makeDraw: function(){
         sign.canvas.addEventListener('mousemove', function(e){
-            if(sign.click){ //créer des points et les relier
+            if(sign.click){ //créer des lignes
                 sign.ctx.lineTo(e.offsetX, e.offsetY);
                 sign.ctx.stroke();           
                 sign.ctx.beginPath(); 
@@ -33,7 +38,18 @@ var sign = {
                 sign.pts++;      
             };
         }.bind(sign));
-        
+    },
+
+    makeDrawTouch: function(){
+        sign.canvas.addEventListener('touchmove', function(e){
+            if(sign.click){ //créer des lignes tactile
+                sign.rect = sign.canvas.getBoundingClientRect();
+                e.preventDefault();
+                x = e.touches[0].clientX - sign.rect.left;
+                y = e.touches[0].clientY - sign.rect.top; 
+                sign.pts++;      
+            };
+        }.bind(sign));
     },
 
     drawOnClick: function(){// faire un dessin
@@ -41,9 +57,23 @@ var sign = {
             sign.click = true;
         });
     },
+
+    drawOnTouch: function(){ //dessin tactile
+        sign.canvas.addEventListener('touchmove', function(){
+            sign.click = true;
+        });
+    },
     
     stopDraw: function(){ //arrêter le dessin
         sign.canvas.addEventListener('mouseup', function(){
+            sign.click = false;           
+            sign.ctx.beginPath(); 
+            sign.enableValid();
+        });
+    },
+
+    stoDrawOnTouch: function(){
+        sign.canvas.addEventListener('touchend', function(){
             sign.click = false;           
             sign.ctx.beginPath(); 
             sign.enableValid();

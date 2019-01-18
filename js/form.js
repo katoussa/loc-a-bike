@@ -19,20 +19,20 @@ var form = {
     },
 
     checkForm: function(){
-        if(form.name.value.length < 3){
+        if(form.name.value.length < 2){
             messError1.className = "messError1v";
         }else{
             messError1.className = "messError1";
         };
-        if(form.firstname.value.length < 3){
+        if(form.firstname.value.length < 2){
             messError2.className = "messError2v";
         }else{
             messError2.className = "messError2";
         };
 
-        if(form.name.value.length < 3 || form.firstname.value.length < 3){
+        if(form.name.value.length < 2 || form.firstname.value.length < 2){
             form.button.disabled = true;
-        }else if(form.name.value.length > 2 && form.firstname.value.length > 3){
+        }else if(form.name.value.length > 2 && form.firstname.value.length > 2){
             form.button.disabled = false;
         };
     },
