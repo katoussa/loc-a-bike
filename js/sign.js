@@ -44,9 +44,11 @@ var sign = {
         sign.canvas.addEventListener('touchmove', function(e){
             if(sign.click){ //créer des lignes tactile
                 sign.rect = sign.canvas.getBoundingClientRect();
-                e.preventDefault();
-                x = e.touches[0].clientX - sign.rect.left;
-                y = e.touches[0].clientY - sign.rect.top; 
+                sign.ctx.lineTo(x, y);
+                sign.ctx.stroke(); 
+                sign.ctx.beginPath();
+                sign.ctx.moveTo(x, y);
+                e.preventDefault(); 
                 sign.pts++;      
             };
         }.bind(sign));
@@ -59,7 +61,9 @@ var sign = {
     },
 
     drawOnTouch: function(){ //dessin tactile
-        sign.canvas.addEventListener('touchmove', function(){
+        sign.canvas.addEventListener('touchstart', function(){
+            x = e.touches[0].clientX - sign.rect.left;
+            y = e.touches[0].clientY - sign.rect.top;
             sign.click = true;
         });
     },
