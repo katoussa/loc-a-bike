@@ -39,12 +39,11 @@
         <section id="map-container" class="map-container">
             <div class="legende">
                 <h3>Carte des vélos en temps réel</h3>
-                <p>Icône bleu = vélos disponibles dans la station</p>
-                <p>Icône rouge = pas de vélo disponible dans la station</p>
+                <p><span class="blue">Icône bleu</span> = vélos disponibles dans la station</p>
+                <p><span class="red">Icône rouge</span> = pas de vélo disponible dans la station</p>
             </div>
             <div class="map-content">
                 <div id="map" class="map">
-                    <button id="btnMap" class="btn btnMap">btnMap</button>
                 </div>
 
                 <div id="stations" class="stations">
@@ -56,6 +55,7 @@
                             <p id="dispoBike" class="dispoBike"><span class='bolt'>Nombre de vélos disponibles: </span></p>
                             <p id="dispoPlace" class="dispoPlace"><span class='bolt'>Nombre de places disponibles: </span></p>
                         </div>
+                        
                         <form id="formInvisible" class="formInvisible" method="GET">
                             <div id="elemFormInvisible1" class="elemFormInvisible">
                                 <label for="name">Nom :</label>
@@ -72,11 +72,10 @@
                             </div>
                         </form>
                         <p id="noBikes" class="noBikes">Il n'y a aucun vélo disponible dans cette station.</p>
-                    </div>
 
-                    <div id="signature" class="signature">
+                        <div id="signature" class="signature">
                         <h3 class="signez">Signez ici:</h3>
-                        <canvas id="signCanvas" class="signCanvas" width="540px" height="155px"></canvas>
+                        <canvas id="signCanvas" class="signCanvas"></canvas>
                         <button type="button" id="clearSign">Effacer</button>
                         <button type="button" id="validSign" class="invisible">Valider</button>
                     </div>
@@ -90,8 +89,11 @@
             <button type="button" id="annulBtn" class="annulBtn">Annuler la réservation</button>
         </footer>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js" ></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js" ></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
         <script src="js/services.js"></script>
         <script src="js/slider.js"></script>
         <script src="js/map.js"></script>
