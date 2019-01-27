@@ -94,13 +94,13 @@ var slider = {
 
   //Méthode défilement + play / pause évènements tactiles
   onSwipe: function(){
-    slider.slideshow.on("swiperight", function(){
+    $(slider.slideshow).on("swiperight", function(){
       slider.prevImg();
     });
-    slider.slideshow.on("swipeleft", function(){
+    $(slider.slideshow).on("swipeleft", function(){
       slider.nextImg();
     });
-    slider.slideshow.on("tap", function(){
+    $(slider.slideshow).on("tap", function(){
       slider.playPause();
     });
   }

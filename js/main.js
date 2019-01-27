@@ -2,7 +2,7 @@
 var globalMain = {
     data: {
         slider: {
-            slideshow: $("#slideshow")[0],
+            slideshow: "#slideshow",
             slide: $(".slide")[0],
             slideText: $(".slideText")[0],
             prevBtn : $("#prevBtn")[0],
