@@ -28,8 +28,8 @@ var slider = {
     if(slider.i < 0) {
       slider.i = slider.nbreImg + 1;
     };
-    slider.slide.src = slider.imgs[slider.i]; 
-		slider.slideText.innerHTML = slider.imgText[slider.i];
+    document.querySelector(slider.slide).src = slider.imgs[slider.i]; 
+		document.querySelector(slider.slideText).innerHTML = slider.imgText[slider.i];
   },
 
   // Méthode de défilement auto
@@ -42,10 +42,10 @@ var slider = {
     if(slider.auto) {
       clearInterval(slider.auto);
       slider.auto = null;
-      slider.pauseBtn.className = "playBtn";
+      document.querySelector(slider.pauseBtn).className = "playBtn";
     }else{
       slider.auto = setInterval(slider.nextImg, slider.time);
-      slider.pauseBtn.className = "pauseBtn";
+      document.querySelector(slider.pauseBtn).className = "pauseBtn";
     };
   },
 
@@ -58,19 +58,19 @@ var slider = {
     if (slider.i < 0) {
       slider.i = slider.nbreImg -1;
     };
-    slider.slide.src = slider.imgs[slider.i];
-    slider.slideText.innerHTML = slider.imgText[slider.i];  
+    document.querySelector(slider.slide).src = slider.imgs[slider.i];
+    document.querySelector(slider.slideText).innerHTML = slider.imgText[slider.i];  
   },
 
   //Méthode de click sur boutons
   onClick: function(){
-    slider.nextBtn.on("click", function(){
+    $(slider.nextBtn).on("click", function(){
       slider.nextImg();
     });
-    slider.prevBtn.on("click", function(){
+    $(slider.prevBtn).on("click", function(){
       slider.prevImg();
     });
-    pauseBtn.on("click", function(){
+    $(pauseBtn).on("click", function(){
       slider.playPause();
     });
   },
@@ -94,13 +94,14 @@ var slider = {
 
   //Méthode défilement + play / pause évènements tactiles
   onSwipe: function(){
-    $(slider.slideshow).on("swiperight", function(){
+    $(slider.slideshow).addEventListener("swiperight", function(){
       slider.prevImg();
+      alert("swiperight");
     });
-    $(slider.slideshow).on("swipeleft", function(){
+    $(slider.slideshow).addEventListener("swipeleft", function(){
       slider.nextImg();
     });
-    $(slider.slideshow).on("tap", function(){
+    $(slider.slideshow).addEventListener("tap", function(){
       slider.playPause();
     });
   }

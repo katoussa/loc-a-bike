@@ -3,11 +3,11 @@ var globalMain = {
     data: {
         slider: {
             slideshow: "#slideshow",
-            slide: $(".slide")[0],
-            slideText: $(".slideText")[0],
-            prevBtn : $("#prevBtn")[0],
-            nextBtn: $("#nextBtn")[0],
-            pauseBtn: $("#pauseBtn")[0],
+            slide: ".slide",
+            slideText: ".slideText",
+            prevBtn : "#prevBtn",
+            nextBtn: "#nextBtn",
+            pauseBtn: "#pauseBtn",
             imgText: [
                 "Sur la carte, vous pouvez voir les stations de la ville.",
                 "Les markers bleus indiquent les stations où au moins un vélo est disponible, les rouges celles où il n'y en a aucun.",
@@ -90,7 +90,8 @@ var globalMain = {
                 objSign = Object.create(sign),
                 objReserve = Object.create(reserve);
             
-            objSlider.init(globalMain.data.slider.slideText, 
+            objSlider.init(globalMain.data.slider.slideshow,
+                globalMain.data.slider.slideText, 
                 globalMain.data.slider.slide,
                 globalMain.data.slider.prevBtn,
                 globalMain.data.slider.nextBtn,
