@@ -17,11 +17,11 @@ var infos = {
         reserve.station = stations.stations[i];
         
         if(stations.stations[i].available_bikes > 0){ //si vélo dispos entrer nom + prénom
-            document.getElementById(infos.formInvisible).className = "formVisible";
-            document.getElementById(infos.noBikes).className = "noBikes";
+            infos.formInvisible.className = "formVisible";
+            infos.noBikes.className = "noBikes";
         }else{ //sinon affiche "pas de vélos dispos"
-            document.getElementById(infos.noBikes).className = "noBikesVisible";
-            document.getElementById(infos.formInvisible).className = "formInvisible";
+            infos.noBikes.className = "noBikesVisible";
+            infos.formInvisible.className = "formInvisible";
         };
     }
 };

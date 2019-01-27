@@ -1,5 +1,6 @@
 var slider = {
-  init: function(slideText, slide, prevBtn, nextBtn, pauseBtn, imgText, imgs, time){
+  init: function(slideshow, slideText, slide, prevBtn, nextBtn, pauseBtn, imgText, imgs, time){
+    slider.slideshow = slideshow;
     slider.slideText = slideText;
 		slider.slide = slide;
     slider.prevBtn = prevBtn;
@@ -27,8 +28,8 @@ var slider = {
     if(slider.i < 0) {
       slider.i = slider.nbreImg + 1;
     };
-    document.querySelector(slider.slide).src = slider.imgs[slider.i]; 
-		document.querySelector(slider.slideText).innerHTML = slider.imgText[slider.i];
+    slider.slide.src = slider.imgs[slider.i]; 
+		slider.slideText.innerHTML = slider.imgText[slider.i];
   },
 
   // Méthode de défilement auto
@@ -41,10 +42,10 @@ var slider = {
     if(slider.auto) {
       clearInterval(slider.auto);
       slider.auto = null;
-      document.querySelector(slider.pauseBtn).className = "playBtn";
+      slider.pauseBtn.className = "playBtn";
     }else{
       slider.auto = setInterval(slider.nextImg, slider.time);
-      document.querySelector(slider.pauseBtn).className = "pauseBtn";
+      slider.pauseBtn.className = "pauseBtn";
     };
   },
 
@@ -57,19 +58,19 @@ var slider = {
     if (slider.i < 0) {
       slider.i = slider.nbreImg -1;
     };
-    document.querySelector(slider.slide).src = slider.imgs[slider.i];
-    document.querySelector(slider.slideText).innerHTML = slider.imgText[slider.i];  
+    slider.slide.src = slider.imgs[slider.i];
+    slider.slideText.innerHTML = slider.imgText[slider.i];  
   },
 
   //Méthode de click sur boutons
   onClick: function(){
-    $(slider.nextBtn).on("click", function(){
+    slider.nextBtn.on("click", function(){
       slider.nextImg();
     });
-    $(slider.prevBtn).on("click", function(){
+    slider.prevBtn.on("click", function(){
       slider.prevImg();
     });
-    $(pauseBtn).on("click", function(){
+    pauseBtn.on("click", function(){
       slider.playPause();
     });
   },
@@ -93,13 +94,13 @@ var slider = {
 
   //Méthode défilement + play / pause évènements tactiles
   onSwipe: function(){
-    $(slider.slide).on("swiperight", function(){
+    slider.slideshow.on("swiperight", function(){
       slider.prevImg();
     });
-    $(slider.slide).on("swipeleft", function(){
+    slider.slideshow.on("swipeleft", function(){
       slider.nextImg();
     });
-    $(slider.slide).on("tap", function(){
+    slider.slideshow.on("tap", function(){
       slider.playPause();
     });
   }

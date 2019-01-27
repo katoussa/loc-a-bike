@@ -2,11 +2,12 @@
 var globalMain = {
     data: {
         slider: {
-            slide: ".slide",
-            slideText: ".slideText",
-            prevBtn : "#prevBtn",
-            nextBtn: "#nextBtn",
-            pauseBtn: "#pauseBtn",
+            slideshow: $("#slideshow")[0],
+            slide: $(".slide")[0],
+            slideText: $(".slideText")[0],
+            prevBtn : $("#prevBtn")[0],
+            nextBtn: $("#nextBtn")[0],
+            pauseBtn: $("#pauseBtn")[0],
             imgText: [
                 "Sur la carte, vous pouvez voir les stations de la ville.",
                 "Les markers bleus indiquent les stations où au moins un vélo est disponible, les rouges celles où il n'y en a aucun.",
@@ -43,38 +44,38 @@ var globalMain = {
             imgSrc2: "https://pngimage.net/wp-content/uploads/2018/06/simbolo-de-ubicacion-png-6.png"
         },
         infos:{
-            stationName: document.getElementById("stationName"),
-            stationAdress: document.getElementById("stationAdress"),
-            dispoBike: document.getElementById("dispoBike"),
-            dispoPlace: document.getElementById("dispoPlace"),
-            formInvisible: "formInvisible",
-            noBikes: "noBikes"
+            stationName: $("#stationName")[0],
+            stationAdress: $("#stationAdress")[0],
+            dispoBike: $("#dispoBike")[0],
+            dispoPlace: $("#dispoPlace")[0],
+            formInvisible: $("#formInvisible")[0],
+            noBikes: $("#noBikes")[0]
         },
         form: {
-            name: document.getElementById("name"),
-            firstname: document.getElementById("firstname"),
-            button: document.getElementById("btnForm"),
-            messError1: document.getElementById("messError1"),
-            messError2: document.getElementById("messError2"),
+            name: $("#name")[0],
+            firstname: $("#firstname")[0],
+            button: $("#btnForm")[0],
+            messError1: $("#messError1")[0],
+            messError2: $("#messError2")[0],
             setName: "",
             setFirstname: ""
         },
         sign: {
-            signature: document.getElementById("signature"),
-            canvas: document.getElementById("signCanvas"),
+            signature: $("#signature")[0],
+            canvas: $("#signCanvas")[0],
             ctx: "",
             img: "img/plume.png",
-            clear: document.getElementById("clearSign"),
+            clear: $("#clearSign")[0],
             pts: 0
         },
         reserve: {
-            validBtn: document.getElementById("validSign"),
-            footerText: document.getElementById("footerText"),
+            validBtn: $("#validSign")[0],
+            footerText: $("#footerText")[0],
             station: "",
             sec: "",
             min: "",
-            timerP: document.getElementById("countDown"),
-            annulBtn: document.getElementById("annulBtn")
+            timerP: $("#countDown")[0],
+            annulBtn: $("#annulBtn")[0]
         }
     },
     methods: {
