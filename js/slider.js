@@ -96,7 +96,6 @@ var slider = {
   onSwipe: function(e){
     $(slider.slideshow).on("swiperight", function(){
       slider.prevImg();
-      alert("swiperight");
     });
     $(slider.slideshow).on("swipeleft", function(){
       slider.nextImg();
