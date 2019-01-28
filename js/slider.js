@@ -93,7 +93,7 @@ var slider = {
   },
 
   //Méthode défilement + play / pause évènements tactiles
-  onSwipe: function(){
+  onSwipe: function(e){
     $(slider.slideshow).on("swiperight", function(){
       slider.prevImg();
       alert("swiperight");

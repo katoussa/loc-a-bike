@@ -105,6 +105,7 @@
 .signatureVisible{
     margin-top: 1.5em;
     display: block;
+    width: 65%;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.75);
 }
@@ -138,6 +139,10 @@
 }
 
 @media screen and (max-width: 1200px){
+    .map{
+        height: 550px;;
+    }
+    
     .btnForm {
         width: 100px;
         height: 20px;
@@ -151,6 +156,10 @@
 }
 
 @media screen and (max-width: 992px){
+    .map{
+        height: 500px;;
+    }
+
     .map-content{
         flex-direction: column;
     }
@@ -162,6 +171,10 @@
 }
 
 @media screen and (max-width: 780px){
+    .map{
+        height: 450px;;
+    }
+
     .signatureVisible{
         width: 75%;
         margin: 0 auto;
