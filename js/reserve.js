@@ -33,6 +33,7 @@ var reserve = {
         reserve.station.available_bikes--;
         reserve.makeCountDown();
         reserve.stationRes = reserve.station;
+        infos.dispoBike.innerHTML= "<span class='bolt'>Nombre de vélos disponibles: </span>" + reserve.stationRes.available_bikes;
     },
 
     makeCountDown: function(){
@@ -68,6 +69,7 @@ var reserve = {
             reserve.timerP.innerHTML = "Votre réservation a bien été annulée.";
             reserve.footerText.innerHTML = "";
             reserve.annulBtn.className = "annulBtn";
+            infos.dispoBike.innerHTML= "<span class='bolt'>Nombre de vélos disponibles: </span>" + reserve.stationRes.available_bikes;
         });
     }
 

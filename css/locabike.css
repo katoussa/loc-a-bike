@@ -5,6 +5,10 @@ body{
     background-size: cover;
 }
 
+.ui-page-active{
+    outline: none;
+}
+
 .ui-loader{
     display: none;
 }

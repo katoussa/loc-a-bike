@@ -82,7 +82,7 @@
     height: 400px;
   } 
 
-  .slideshow > div > img{
+  .slideshow > img{
     border-radius: 10px;
     height: 325px;
   } 
@@ -93,7 +93,7 @@
     height: 350px;
   }
 
-  .slideshow > div > img{
+  .slideshow > img{
     border-radius: 10px;
     height: 275px;
   }
@@ -108,12 +108,12 @@
   height: 275px;
   }
 
-  .slideshow > div > img{
+  .slideshow > img{
     border-radius: 10px;
     height: 225px;
   }
 
-  .slideshow > div > p{
+  .slideshow > p{
     font-size: 17.5px;
   }
 }
@@ -129,12 +129,12 @@
   height: 200px;
   }
 
-  .slideshow > div > img{
+  .slideshow > img{
     border-radius: 10px;
     height: 150px;
   }
 
-  .slideshow > div > p{
+  .slideshow > p{
     font-size: 15px;
   }
 }
