@@ -34,7 +34,8 @@ var globalMain = {
         },
         map: {
             lat: 45.765000,
-            lng: 4.850000
+            lng: 4.850000,
+            markers: L.markerClusterGroup()
         },
         stations: {
             stations: [],
@@ -103,7 +104,8 @@ var globalMain = {
 
             objMap.init(
                 globalMain.data.map.lat,
-                globalMain.data.map.lng
+                globalMain.data.map.lng,
+                globalMain.data.map.markers
             );
 
             objServices.getData(globalMain.data.services.url)
@@ -112,6 +114,7 @@ var globalMain = {
                     objStations.init(
                         globalMain.data.stations.stations,
                         globalMain.data.stations.marker,
+                        globalMain.data.map.markers,
                         globalMain.data.stations.icon,
                         globalMain.data.stations.imgSrc1,
                         globalMain.data.stations.imgSrc2
