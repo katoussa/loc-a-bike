@@ -1,19 +1,28 @@
+.slider h3{
+  margin: 0 auto;
+  font-size: 2em;
+  color: #fff;
+  background-color: #000;
+  border-radius: 5px;
+  width:85%;
+  text-align: center;
+}
+
 .slideshow {
   margin: 0 auto;
   position: relative;
-  width: 95%;
+  width: 85%;
   height: 600px;
-  padding: 10px;
 }
 
 .slideshow > p,
 .slideshow > img{
   margin: 2px 0;
+  border: solid 2px rgb(0, 0, 0);
+  border-radius: 10px;
 }
 
 .slideshow > p{
-  border: solid 2px rgb(0, 0, 0);
-  border-radius: 10px;
   height: 50px;
   font-size: 20px;
   font-weight: 700;
@@ -23,7 +32,6 @@
 }
 
 .slideshow > img{
-  border-radius: 10px;
   height: 525px;
 }
 
@@ -77,6 +85,14 @@
   background-size: cover;
 }
 
+.noBikes{
+  display: none;
+}
+
+.noBikesVisible{
+  display: block;
+}
+
 @media screen and (max-width: 1280px){
   .slideshow{
     height: 400px;
@@ -89,6 +105,11 @@
 }
 
 @media screen and (max-width: 992px){
+  .slider h3{
+    font-size: 1.75em;
+    width:50%;
+  }
+    
   .slideshow{
     height: 350px;
   }
@@ -104,6 +125,10 @@
 }
 
 @media screen and (max-width: 780px){
+  .slider h3{
+    font-size: 1.5em;
+  }
+  
   .slideshow{
   height: 275px;
   }
@@ -119,12 +144,21 @@
 }
 
 @media screen and (max-width: 600px){
+  .slider h3{
+    font-size: 1.25em;
+    width:75%;
+  }
+  
   .slideshow{
   height: 250px;
   }
 }
 
 @media screen and (max-width: 450px){
+  .slider h3{
+    font-size: 1em;
+  }
+  
   .slideshow{
   height: 200px;
   }
@@ -135,6 +169,6 @@
   }
 
   .slideshow > p{
-    font-size: 15px;
+    font-size: 12px;
   }
 }

@@ -8,6 +8,15 @@ var globalMain = {
             prevBtn : "#prevBtn",
             nextBtn: "#nextBtn",
             pauseBtn: "#pauseBtn",
+            imgs: ["img/br1.png",
+                "img/br2.png",
+                "img/br3.png",
+                "img/br4.png",
+                "img/br5.png",
+                "img/br6.png",
+                "img/br7.png",
+                "img/br8.png"
+            ],
             imgText: [
                 "Sur la carte, vous pouvez voir les stations de la ville.",
                 "Les markers bleus indiquent les stations où au moins un vélo est disponible, les rouges celles où il n'y en a aucun.",
@@ -17,15 +26,6 @@ var globalMain = {
                 "Signez. Vous pouvez effacer la signature. Sinon, validez.",
                 "Une fois la réservation signée et validée, une confirmation et un compte à rebours s'affichent en-dessous de la carte.",
                 " Vous pouvez annuler la réservation en cours. Une nouvelle réservation annule la précédente."
-            ],
-            imgs: ["img/br1.png",
-                "img/br2.png",
-                "img/br3.png",
-                "img/br4.png",
-                "img/br5.png",
-                "img/br6.png",
-                "img/br7.png",
-                "img/br8.png"
             ],
             time: 5000
         },

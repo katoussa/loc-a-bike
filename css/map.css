@@ -157,7 +157,7 @@
 
 @media screen and (max-width: 992px){
     .map{
-        height: 500px;;
+        height: 475px;;
     }
 
     .map-content{
@@ -172,11 +172,17 @@
 
 @media screen and (max-width: 780px){
     .map{
-        height: 450px;;
+        height: 400px;;
     }
 
     .signatureVisible{
         width: 75%;
         margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .map{
+        height: 350px;;
     }
 }

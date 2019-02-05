@@ -14,9 +14,9 @@ var slider = {
   
     //Appel des méthodes
     slider.onKeyboard();
-    slider.onSwipe();
     slider.autoSlide();
     slider.onClick();
+    slider.onSwipe();
   },
 
   // Méthode de défilement vers image suivante
@@ -36,19 +36,7 @@ var slider = {
   autoSlide: function(){
     slider.auto = setInterval(slider.nextImg, slider.time);
   },
-
-  //Méthode play / pause
-  playPause: function() {
-    if(slider.auto) {
-      clearInterval(slider.auto);
-      slider.auto = null;
-      document.querySelector(slider.pauseBtn).className = "playBtn";
-    }else{
-      slider.auto = setInterval(slider.nextImg, slider.time);
-      document.querySelector(slider.pauseBtn).className = "pauseBtn";
-    };
-  },
-
+  
   //Méthode de défilement vers image précédente
   prevImg: function(){
     slider.i--;
@@ -60,6 +48,18 @@ var slider = {
     };
     document.querySelector(slider.slide).src = slider.imgs[slider.i];
     document.querySelector(slider.slideText).innerHTML = slider.imgText[slider.i];  
+  },
+
+  //Méthode play / pause
+  playPause: function() {
+    if(slider.auto) {
+      clearInterval(slider.auto);
+      slider.auto = null;
+      document.querySelector(slider.pauseBtn).className = "playBtn";
+    }else{
+      slider.auto = setInterval(slider.nextImg, slider.time);
+      document.querySelector(slider.pauseBtn).className = "pauseBtn";
+    };
   },
 
   //Méthode de click sur boutons

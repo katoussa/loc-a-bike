@@ -14,13 +14,13 @@ var stations = {
         
         stations.blueIcon = L.icon({
             iconUrl: 'img/iconblue.png',
-            iconSize:     [20, 50], // size of the icon
+            iconSize:     [20, 35], // size of the icon
             iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
             popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
         });
         stations.redIcon = L.icon({
             iconUrl: 'img/iconred.png',
-            iconSize:     [20, 50], // size of the icon
+            iconSize:     [20, 35], // size of the icon
             iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
             popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
         });
