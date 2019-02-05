@@ -3,8 +3,8 @@ var globalMain = {
     data: {
         slider: {
             slideshow: "#slideshow",
-            slide: ".slide",
-            slideText: ".slideText",
+            slide: "#slide",
+            slideText: "#slideText",
             prevBtn : "#prevBtn",
             nextBtn: "#nextBtn",
             pauseBtn: "#pauseBtn",
@@ -28,6 +28,27 @@ var globalMain = {
                 " Vous pouvez annuler la réservation en cours. Une nouvelle réservation annule la précédente."
             ],
             time: 5000
+        },
+        //slider2
+        slider2: {
+            slideshow: "#slideshow2",
+            slide: "#slide2",
+            slideText: "#slideText2",
+            prevBtn : "#prevBtn2",
+            nextBtn: "#nextBtn2",
+            pauseBtn: "#pauseBtn2",
+            imgs: ["img/br1.png",
+                "img/br2.png",
+                "img/br3.png",
+                "img/br4.png"
+            ],
+            imgText: [
+                "voilà",
+                "mon",
+                "2ème",
+                "slider!"
+            ],
+            time: 2000
         },
         services: {
             url: "https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=aafd8fb136e33eb56306745265f47b4f6770d3cb"
@@ -83,6 +104,7 @@ var globalMain = {
         init: function(){
             // Création des objets 
             var objSlider = Object.create(slider),
+                objSlider2 = Object.create(slider),
                 objMap = Object.create(map),
                 objServices = Object.create(services),
                 objStations = Object.create(stations),
@@ -100,6 +122,17 @@ var globalMain = {
                 globalMain.data.slider.imgText,
                 globalMain.data.slider.imgs,
                 globalMain.data.slider.time
+            );
+            //slider2
+            objSlider2.init(globalMain.data.slider2.slideshow,
+                globalMain.data.slider2.slideText, 
+                globalMain.data.slider2.slide,
+                globalMain.data.slider2.prevBtn,
+                globalMain.data.slider2.nextBtn,
+                globalMain.data.slider2.pauseBtn,
+                globalMain.data.slider2.imgText,
+                globalMain.data.slider2.imgs,
+                globalMain.data.slider2.time
             );
 
             objMap.init(
