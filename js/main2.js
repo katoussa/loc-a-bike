@@ -27,7 +27,9 @@ var globalMain = {
                 "Une fois la réservation signée et validée, une confirmation et un compte à rebours s'affichent en-dessous de la carte.",
                 " Vous pouvez annuler la réservation en cours. Une nouvelle réservation annule la précédente."
             ],
-            time: 5000
+            time: 5000,
+            i: 0,
+
         },
         //slider2
         slider2: {
@@ -37,18 +39,21 @@ var globalMain = {
             prevBtn : "#prevBtn2",
             nextBtn: "#nextBtn2",
             pauseBtn: "#pauseBtn2",
-            imgs: ["img/br1.png",
-                "img/br2.png",
-                "img/br3.png",
-                "img/br4.png"
+            imgs: ["img2/rapidite.png",
+                "img2/ergonomie.png",
+                "img2/skills.jpg",
+                "img2/functions.jpg",
+                "img2/handicap.jpg"
             ],
             imgText: [
                 "voilà",
                 "mon",
                 "2ème",
-                "slider!"
+                "slider!",
+                "youhou!"
             ],
-            time: 2000
+            time: 2000,
+            i: 0
         },
         services: {
             url: "https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=aafd8fb136e33eb56306745265f47b4f6770d3cb"
@@ -121,7 +126,8 @@ var globalMain = {
                 globalMain.data.slider.pauseBtn,
                 globalMain.data.slider.imgText,
                 globalMain.data.slider.imgs,
-                globalMain.data.slider.time
+                globalMain.data.slider.time,
+                globalMain.data.slider.i
             );
             //slider2
             objSlider2.init(globalMain.data.slider2.slideshow,
@@ -132,7 +138,8 @@ var globalMain = {
                 globalMain.data.slider2.pauseBtn,
                 globalMain.data.slider2.imgText,
                 globalMain.data.slider2.imgs,
-                globalMain.data.slider2.time
+                globalMain.data.slider2.time,
+                globalMain.data.slider2.i
             );
 
             objMap.init(
