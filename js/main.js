@@ -3,8 +3,8 @@ var globalMain = {
     data: {
         slider: {
             slideshow: "#slideshow",
-            slide: ".slide",
-            slideText: ".slideText",
+            slide: "#slide",
+            slideText: "#slideText",
             prevBtn : "#prevBtn",
             nextBtn: "#nextBtn",
             pauseBtn: "#pauseBtn",
@@ -101,7 +101,7 @@ var globalMain = {
                 globalMain.data.slider.imgs,
                 globalMain.data.slider.time
             );
-
+           
             objMap.init(
                 globalMain.data.map.lat,
                 globalMain.data.map.lng,

@@ -55,6 +55,18 @@
   margin: 5px;
 }
 
+/* slider2*/
+.prevBtn2,
+.pauseBtn2,
+.playBtn2,
+.nextBtn2{
+  cursor: pointer;
+  z-index: 10;
+  display: inline-block;
+  margin: 5px;
+}
+/**/
+
 .button button{
   width: 75px;
   height: 75px;
@@ -84,6 +96,28 @@
   background: url(../img/next.png) no-repeat center;
   background-size: cover;
 }
+
+/* slider2 */
+.prevBtn2{
+  background: url(../img/prev.png) no-repeat center;
+  background-size: cover;
+}
+
+.pauseBtn2{
+  background: url(../img/pause.png) no-repeat center;
+  background-size: cover;
+}
+
+.playBtn2{
+  background: url(../img/play.png) no-repeat center;
+  background-size: cover;
+}
+
+.nextBtn2{
+  background: url(../img/next.png) no-repeat center;
+  background-size: cover;
+}
+/**/
 
 .noBikes{
   display: none;
